@@ -1,0 +1,10 @@
+{
+  "title": "Relationship Field",
+  "cells": [
+    {
+      "type": "code",
+      "language": "php",
+      "data": "array(\n    'key' => 'field_57a36ab87e817',\n    'label' => 'Relationship Itinerary',\n    'name' => 'relationship_itinerary',\n    'type' => 'relationship',\n    'instructions' => '',\n    'required' => 0,\n    'conditional_logic' => 0,\n    'wrapper' => array(\n        'width' => '',\n        'class' => '',\n        'id' => '',\n    ),\n    'post_type' => array(\n        0 => 'itinerary',\n    ),\n    'taxonomy' => array(),\n    'min' => 0,\n    'max' => 3,\n    'filters' => array(\n        0 => 'search',\n        1 => 'post_type',\n        2 => 'taxonomy',\n    ),\n    'elements' => array(),\n    'return_format' => 'object',\n),"
+    }
+  ]
+}

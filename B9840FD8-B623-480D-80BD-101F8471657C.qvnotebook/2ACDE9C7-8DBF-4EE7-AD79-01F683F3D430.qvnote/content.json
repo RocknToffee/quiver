@@ -1,0 +1,41 @@
+{
+  "title": "PHP ACF",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Get alt text"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "<?php echo get_post_meta($field['image_flex_text'], '_wp_attachment_image_alt', true); ?>"
+    },
+    {
+      "type": "text",
+      "data": "Images"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "<img src=\"<?php echo wp_get_attachment_url($field['image']); ?>\">"
+    },
+    {
+      "type": "text",
+      "data": "Relationship Field"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "<?php foreach ($field['relationship_field'] as $post){ // variable must be called $post (IMPORTANT) ?>\n    <?php setup_postdata($post); ?>\n    <?php\n    $thumb_id = get_post_thumbnail_id();\n    $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'medium_large', true);\n    $thumb_url = $thumb_url_array[0];\n    ?>\n    <article style=\"background-image: url('<?php echo $thumb_url ?>')\">\n            <h3><?php the_title(); ?></h3>\n            <a href=\"<?php the_permalink(); ?>\"></a>\n    </article>\n<?php } ?>\n<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly\n?>"
+    },
+    {
+      "type": "text",
+      "data": "Semantic image"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "<figure>\n    <?php $image = $field['image_field']; ?>\n    <img src=\"<?php echo $image['url']; ?>\"\n         alt=\"<?php echo $image['alt'] ?>\"\n         title=\"<?php echo $image['title'] ?>\">\n    <?php if ($image['caption']) {\n        ?>\n        <figcaption><?php echo $image['caption'] ?></figcaption>\n        <?php\n    }\n    ?>\n</figure>"
+    }
+  ]
+}

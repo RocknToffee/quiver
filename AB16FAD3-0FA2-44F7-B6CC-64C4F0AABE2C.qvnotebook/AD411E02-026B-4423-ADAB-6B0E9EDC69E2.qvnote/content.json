@@ -1,0 +1,18 @@
+{
+  "title": "Optimize Page Speed",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Expires headers"
+    },
+    {
+      "type": "code",
+      "language": "twig",
+      "data": "<IfModule mod_expires.c>\n ExpiresActive On\n ExpiresDefault \"access plus 1 seconds\"\n ExpiresByType image/x-icon \"access plus 2592000 seconds\"\n ExpiresByType image/jpeg \"access plus 2592000 seconds\"\n ExpiresByType image/png \"access plus 2592000 seconds\"\n ExpiresByType image/gif \"access plus 2592000 seconds\"\n ExpiresByType application/x-shockwave-flash \"access plus 2592000 seconds\"\n ExpiresByType text/css \"access plus 604800 seconds\"\n ExpiresByType text/javascript \"access plus 216000 seconds\"\n ExpiresByType application/x-javascript \"access plus 216000 seconds\"\n ExpiresByType text/html \"access plus 600 seconds\"\n ExpiresByType application/xhtml+xml \"access plus 600 seconds\"\n</IfModule>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Testing&nbsp;</h3><div><a href=\"https://varvy.com/pagespeed/\">https://varvy.com/pagespeed/</a><br></div><div><a href=\"https://developers.google.com/speed/pagespeed/insights/\">https://developers.google.com/speed/pagespeed/insights/</a><br></div><div><a href=\"https://gtmetrix.com/\">https://gtmetrix.com/</a><br></div><div><a href=\"http://nibbler.silktide.com/\">http://nibbler.silktide.com/</a><br></div>"
+    }
+  ]
+}

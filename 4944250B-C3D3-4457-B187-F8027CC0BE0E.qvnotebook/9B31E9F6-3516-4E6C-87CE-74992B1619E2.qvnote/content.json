@@ -1,0 +1,25 @@
+{
+  "title": "Vagrant",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Set up<div><a href=\"http://roketco.com/log/the-ultimate-workflow-guide-for-teams-building-wordpress-sites-with-acf-timber-foundation-and-local-machines-with-remote-servers-through-vagrant-and-git/\">http://roketco.com/log/the-ultimate-workflow-guide-for-teams-building-wordpress-sites-with-acf-timber-foundation-and-local-machines-with-remote-servers-through-vagrant-and-git/</a></div>"
+    },
+    {
+      "type": "text",
+      "data": "Downloads<div><a href=\"https://www.vagrantup.com/\">https://www.vagrantup.com/</a><br></div><div><a href=\"https://www.virtualbox.org/\">https://www.virtualbox.org/</a><br></div><div><a href=\"https://github.com/Varying-Vagrant-Vagrants/VVV#the-first-vagrant-up\">https://github.com/Varying-Vagrant-Vagrants/VVV#the-first-vagrant-up</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "Vagrant plugins:<div><pre style=\"box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 16px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 1.45; word-wrap: normal; padding: 16px; overflow: auto; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; orphans: 2; widows: 2; background-color: rgb(247, 247, 247);\"><code style=\"box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; display: inline; overflow: visible; line-height: inherit; word-wrap: normal;\">vagrant plugin install vagrant-hostsupdater</code></pre><div><pre style=\"box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 16px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 1.45; word-wrap: normal; padding: 16px; overflow: auto; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; orphans: 2; widows: 2; background-color: rgb(247, 247, 247);\"><code style=\"box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; display: inline; overflow: visible; line-height: inherit; word-wrap: normal;\">vagrant plugin install vagrant-triggers</code></pre><pre style=\"box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 16px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 1.45; word-wrap: normal; padding: 16px; overflow: auto; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; orphans: 2; widows: 2; background-color: rgb(247, 247, 247);\"><code style=\"box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; display: inline; overflow: visible; line-height: inherit; word-wrap: normal;\"><pre style=\"box-sizing: border-box; font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; margin-top: 0px; margin-bottom: 0px; font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; line-height: 1.45; word-wrap: normal; padding: 16px; overflow: auto; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; word-break: normal;\">vagrant plugin install vagrant-vbguest</pre></code></pre></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "Useful Links<div><a href=\"http://vvv.dev/\">http://vvv.dev/</a>&nbsp;for a default dashboard containing several useful tools<br></div><div><a href=\"http://build.wordpress-develop.dev/\">http://build.wordpress-develop.dev/</a>&nbsp;- for the version of those development files built with Grunt</div><div><a href=\"http://src.wordpress-develop.dev/\">http://src.wordpress-develop.dev/</a>&nbsp;-&nbsp;for trunk WordPress development files<br></div><div><a href=\"http://local.wordpress-trunk.dev/\">http://local.wordpress-trunk.dev/</a>&nbsp;-&nbsp;for WordPress trunk<br></div><div><a href=\"http://local.wordpress.dev/\">http://local.wordpress.dev/</a>&nbsp;-for WordPress stable<br></div>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

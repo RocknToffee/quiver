@@ -1,0 +1,27 @@
+{
+  "title": "Event Click basics",
+  "cells": [
+    {
+      "type": "text",
+      "data": "You can use the following code added to elements on your site to track user journeys. You will need Universal Analytics code not the classic implementation for it to work."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "onClick=\"ga('send', 'event', 'Book a Course', 'Sidebar click');\""
+    },
+    {
+      "type": "text",
+      "data": "The important things to note here are the category ‘Book a Course’ and Action ‘Sidebar click’. If you use the same category for the stages of a process they will collect in Analytics together. The full options are below."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "ga('send', 'event', [eventCategory], [eventAction], [eventLabel], [eventValue], [fieldsObject]);"
+    },
+    {
+      "type": "text",
+      "data": "You can attach a value to your event which is great if you are using ecomm but also as a way of quantifying the importance of the actions going on the site."
+    }
+  ]
+}

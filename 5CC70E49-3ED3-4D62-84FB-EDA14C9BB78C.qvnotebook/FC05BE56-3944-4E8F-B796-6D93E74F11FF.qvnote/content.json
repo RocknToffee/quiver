@@ -1,0 +1,63 @@
+{
+  "title": "Media Queries",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h2 style=\"margin: 0px; padding: 20px 0px; line-height: 1; color: rgb(181, 173, 165); font-family: proxima-nova, 'Helvetica neue', Helvetica, arial, sans-serif; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(52, 58, 64);\">iPad Media Queries (All generations - including iPad mini)</h2><p style=\"margin: 0px 0px 1.5em; color: rgb(181, 173, 165); font-family: proxima-nova, 'Helvetica neue', Helvetica, arial, sans-serif; font-size: 16px; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(52, 58, 64);\">Thanks to Apple's work in creating a consistent experience for users, and easy time for developers, all 5 different iPads (iPads 1-5 and iPad mini) can be targeted with just one CSS media query. The next few lines of code should work perfect for a responsive design.</p>"
+    },
+    {
+      "type": "text",
+      "data": "<h3 style=\"margin-bottom: 4px; color: rgb(181, 173, 165); font-family: proxima-nova, 'Helvetica neue', Helvetica, arial, sans-serif; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(52, 58, 64);\">iPad in portrait &amp; landscape</h3>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "@media only screen \nand (min-device-width : 768px) \nand (max-device-width : 1024px)  { /* STYLES GO HERE */}"
+    },
+    {
+      "type": "text",
+      "data": "<h3 style=\"margin-bottom: 4px; color: rgb(181, 173, 165); font-family: proxima-nova, 'Helvetica neue', Helvetica, arial, sans-serif; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(52, 58, 64);\">iPad in landscape</h3>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "@media only screen \nand (min-device-width : 768px) \nand (max-device-width : 1024px) \nand (orientation : landscape) { /* STYLES GO HERE */}"
+    },
+    {
+      "type": "text",
+      "data": "<h3 style=\"margin-bottom: 4px; color: rgb(181, 173, 165); font-family: proxima-nova, 'Helvetica neue', Helvetica, arial, sans-serif; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(52, 58, 64);\">iPad in portrait</h3>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "@media only screen \nand (min-device-width : 768px) \nand (max-device-width : 1024px) \nand (orientation : portrait) { /* STYLES GO HERE */ }"
+    },
+    {
+      "type": "text",
+      "data": "<h3 style=\"margin-bottom: 4px; color: rgb(181, 173, 165); font-family: proxima-nova, 'Helvetica neue', Helvetica, arial, sans-serif; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(52, 58, 64);\">Retina iPad in portrait &amp; landscape</h3>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "@media only screen \nand (min-device-width : 768px) \nand (max-device-width : 1024px)\nand (-webkit-min-device-pixel-ratio: 2) { /* STYLES GO HERE */}"
+    },
+    {
+      "type": "text",
+      "data": "<h3 style=\"margin-bottom: 4px; color: rgb(181, 173, 165); font-family: proxima-nova, 'Helvetica neue', Helvetica, arial, sans-serif; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(52, 58, 64);\">Retina iPad in landscape</h3>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "@media only screen \nand (min-device-width : 768px) \nand (max-device-width : 1024px) \nand (orientation : landscape)\nand (-webkit-min-device-pixel-ratio: 2) { /* STYLES GO HERE */}"
+    },
+    {
+      "type": "text",
+      "data": "<h3 style=\"margin-bottom: 4px; color: rgb(181, 173, 165); font-family: proxima-nova, 'Helvetica neue', Helvetica, arial, sans-serif; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(52, 58, 64);\">Retina iPad in portrait</h3>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "@media only screen \nand (min-device-width : 768px) \nand (max-device-width : 1024px) \nand (orientation : portrait)\nand (-webkit-min-device-pixel-ratio: 2) { /* STYLES GO HERE */ }"
+    }
+  ]
+}

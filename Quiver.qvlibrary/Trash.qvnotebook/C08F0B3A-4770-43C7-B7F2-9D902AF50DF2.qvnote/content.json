@@ -1,0 +1,41 @@
+{
+  "title": "JavaScript Snippets",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Intro"
+    },
+    {
+      "type": "text",
+      "data": "Console logging"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "console.log('yo')"
+    },
+    {
+      "type": "text",
+      "data": "<div>Control video through a filter block overlay,</div>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "<iframe id=\"video1\" width=\"600\" height=\"600\"src=\"https://www.youtube.com/embed/<?php echo $videolink ?>?autoplay=1&controls=0&volume=0&showinfo=0&modestbranding=1&loop=1&enablejsapi=1&playerapi&id=ytplayer&playlist=<?php echo $videolink ?>\"frameborder=\"0\" allowfullscreen></iframe>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var isClicked = \"\";\n$('#stop').on('click', function () {\n    if (isClicked == \"yes\") {\n        $('#video1')[0].contentWindow.postMessage('{\"event\":\"command\",\"func\":\"' + 'playVideo' + '\",\"args\":\"\"}', '*');\n        isClicked = \"no\";\n        \n    } else if (isClicked == \"no\" || isClicked == \"\") {\n        $('#video1')[0].contentWindow.postMessage('{\"event\":\"command\",\"func\":\"' + 'stopVideo' + '\",\"args\":\"\"}', '*');\n        isClicked = \"yes\";\n    }\n});"
+    },
+    {
+      "type": "text",
+      "data": "<div>Mute video on page load</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "  function mute() {\n      $('#video1')[0].contentWindow.postMessage('{\"event\":\"command\",\"func\":\"' + 'mute' + '\",\"args\":\"\"}', '*');\n  }\n\n  $('#video1').load(function () {\n      mute();\n  });"
+    }
+  ]
+}

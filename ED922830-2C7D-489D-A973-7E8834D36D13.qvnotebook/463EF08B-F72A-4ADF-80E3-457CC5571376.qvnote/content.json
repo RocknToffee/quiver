@@ -1,0 +1,19 @@
+{
+  "title": "CSS PopUp Window",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Intro"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div class=\"modal-container\">\n  <input class=\"modal-toggle\" type=\"checkbox\">\n  <button>Click me</button> \n  <div class=\"modal-backdrop\">\n    <div class=\"modal-content\">\n      <h2>Modal title</h2><hr />\n      <p>Hello from inside the modal!</p> \n    </div>          \n  </div>\n</div>  "
+    },
+    {
+      "type": "code",
+      "language": "css",
+      "data": "*, *:before, *:after {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n}\n.modal-container {\n  margin: 80px auto;\n  position: relative;\n  width: 160px;    \n  button {\n    display: block;\n    margin: 0 auto;      \n    color: #fff;  \n    width: 160px;\n    height: 50px;    \n    line-height: 50px;    \n    background: #4CAF50;\n    font-size: 22px;       \n    border: 0;\n    border-radius: 3px;  \n    transition: background 0.3s ease-in;\n  }\n  .modal-backdrop { \n    height: 0; \n    width: 0; \n    opacity: 0;     \n    overflow: hidden; \n    transition: opacity 0.2s ease-in; \n  }\n  .modal-toggle {\n    position: absolute;\n    left: 0;\n    top: 0;\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    opacity: 0;\n    cursor: pointer;\n    &:hover ~ button { \n      background: #1E824C; \n    }    \n    &:checked {\n      background-color: rgba(0, 0, 0, 0.5);\n      width: 100vw;\n      height: 100vh;\n      position: fixed;\n      left: 0;\n      top: 0;\n      z-index: 9;\n      opacity: 0;          \n    }\n    &:checked ~ .modal-backdrop {\n      background-color: rgba(0, 0, 0, 0.6);\n      width: 100vw;\n      height: 100vh;\n      position: fixed;\n      left: 0;\n      top: 0;\n      z-index: 9;\n      pointer-events: none;\n      opacity: 1;\n      .modal-content {\n        background-color: #fff;\n        max-width: 400px;\n        width: 100%;\n        height: 280px;\n        padding: 10px 30px;\n        position: absolute;\n        left: calc(50% - 200px);\n        top: 15%;\n        border-radius: 4px;\n        z-index: 999;\n        pointer-events: auto;\n        cursor: auto;\n        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);  \n        @media (max-width: 400px) { left: 0; }  \n        &:after {\n          content: \"x\";\n          color: #666;\n          position: absolute;\n          right: -25px;\n          top: 0;\n          background: #fff;\n          font-size: 16px;\n          width: 28px;\n          height: 28px;\n          padding-top: 5px;\n          padding-left: 10px;\n          box-shadow: 5px 2px 7px 0px rgba(0, 0, 0, 0.3);\n          border-top-right-radius: 2px;\n          border-bottom-right-radius: 2px;\n          pointer-events: none;\n          font-weight: bold;\n        }                     \n      }        \n    }\n  }\n}"
+    }
+  ]
+}

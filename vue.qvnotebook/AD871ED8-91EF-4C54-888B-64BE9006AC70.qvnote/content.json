@@ -1,0 +1,89 @@
+{
+  "title": "09: Looping",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3><a href=\"https://vuejs.org/v2/guide/conditional.html#v-if-with-v-for\" class=\"headerlink\" title=\"v-if with v-for\" data-scroll=\"\" style=\"color: rgb(128, 187, 255);\"><code style=\"font-size: 13.689000129699707px; background-color: rgba(255, 255, 255, 0.0980392);\">v-for</code></a></h3>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"app\">\n    <ul>\n        <li v-for=\"(ingredient,i) in ingredients\" :key=\"indredient\">{{ ingredient }} {{ i }}</li>\n    </ul>\n    <button @click=\"ingredients.push('spices')\">Add spices</button>\n</div>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var app = new Vue({\n    el: \"#app\", // Connect to the Dom\n    data: {\n        // Stored data to be used in the dom\n        ingredients: ['meat','fruit','cookies'],\n    },\n})"
+    },
+    {
+      "type": "text",
+      "data": "Getting the Index"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<li v-for=\"(ingredient,i) in ingredients\">{{ ingredient }} {{ i }}</li>"
+    },
+    {
+      "type": "text",
+      "data": "Using template:"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<template v-for=\"(ingredient,i) in ingredients\">\n    <h1>{{ ingredient }}</h1>\n    <p>{{ i }}</p>\n</template>"
+    },
+    {
+      "type": "text",
+      "data": "Looping thorugh objects"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"app\">\n    <ul>\n        <li v-for=\"person in persons\">\n            {{ person.name }}\n        </li>\n    </ul>\n     <ul>\n        <li v-for=\"person in persons\">\n            <div v-for=\"(value, key, index) in person\">{{ index }}:{{ key }}: {{ value }}</div>\n        </li>\n    </ul>\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var app = new Vue({\n    el: \"#app\", // Connect to the Dom\n    data: {\n        // Stored data to be used in the dom\n        persons:[\n            {name:'Max', age: 27, color: 'red'},\n            {name:'Anna', age: 'unknown', color: 'blue'}\n        ]\n    },\n})"
+    },
+    {
+      "type": "text",
+      "data": "<h2 id=\"key\"><code><a href=\"https://vuejs.org/v2/guide/list.html#key\" class=\"headerlink\" title=\"key\" data-scroll=\"\">key</a></code></h2><div>To give Vue a hint so that it can track each node’s identity, and thus reuse and reorder existing elements, you need to provide a unique key attribute for each item. An ideal value for key would be the unique id of each item. This special attribute is a rough equivalent to track-by in 1.x, but it works like an attribute, so you need to use v-bind to bind it to dynamic values (using shorthand here):</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "<div v-for=\"item in items\" :key=\"item.id\">\n  <!-- content -->\n</div>"
+    },
+    {
+      "type": "text",
+      "data": "<p>It is recommended to provide a <code>key</code> with <code>v-for</code>\n whenever possible, unless the iterated DOM content is simple, or you \nare intentionally relying on the default behavior for performance gains.</p>\n<p>Since it’s a generic mechanism for Vue to identify nodes, the <code>key</code> also has other uses that are not specifically tied to <code>v-for</code>, as we will see later in the guide.</p>"
+    },
+    {
+      "type": "text",
+      "data": "<h2 id=\"Array-Change-Detection\"><a href=\"https://vuejs.org/v2/guide/list.html#Array-Change-Detection\" class=\"headerlink\" title=\"Array Change Detection\" data-scroll=\"\">Array Change Detection</a></h2><div><h3 id=\"Mutation-Methods\"><a href=\"https://vuejs.org/v2/guide/list.html#Mutation-Methods\" class=\"headerlink\" title=\"Mutation Methods\" data-scroll=\"\">Mutation Methods</a></h3><p>Vue wraps an observed array’s mutation methods so they will also trigger view updates. The wrapped methods are:</p><ul>\n<li><code>push()</code></li>\n<li><code>pop()</code></li>\n<li><code>shift()</code></li>\n<li><code>unshift()</code></li>\n<li><code>splice()</code></li>\n<li><code>sort()</code></li>\n<li><code>reverse()</code></li></ul><div>You can open the console and play with the previous examples’ <code>items</code> array by calling their mutation methods. For example: <code>example1.items.push({ message: 'Baz' })</code>.<font face=\"Menlo, Consolas, Ubuntu Mono, Monaco, source-code-pro, monospace\"><span style=\"font-size: 11.699999809265137px;\"><br></span></font></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3 id=\"Replacing-an-Array\"><a href=\"https://vuejs.org/v2/guide/list.html#Replacing-an-Array\" class=\"headerlink\" title=\"Replacing an Array\" data-scroll=\"\">Replacing an Array</a></h3><p>Mutation\n methods, as the name suggests, mutate the original array they are \ncalled on. In comparison, there are also non-mutating methods, e.g. <code>filter()</code>, <code>concat()</code> and <code>slice()</code>, which do not mutate the original array but <strong>always return a new array</strong>. When working with non-mutating methods, you can replace the old array with the new one:</p>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "example1.items = example1.items.filter(function (item) {\n  return item.message.match(/Foo/)\n})"
+    },
+    {
+      "type": "text",
+      "data": "You might think this will cause Vue to throw away the existing DOM and \nre-render the entire list - luckily, that is not the case. Vue \nimplements some smart heuristics to maximize DOM element reuse, so \nreplacing an array with another array containing overlapping objects is a\n very efficient operation."
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

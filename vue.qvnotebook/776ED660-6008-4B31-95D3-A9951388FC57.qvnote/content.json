@@ -1,0 +1,84 @@
+{
+  "title": "05: Methods, Computed & Watched Properties",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>Methods<br></h3><div>Methods can be trigger by events<br></div>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"app\">\n  <button v-on:click=\"say('hi')\">Say hi</button>\n  <button v-on:click=\"say('what')\">Say what</button>\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "new Vue({\n  el: '#app',\n  methods: {\n    say: function (message) {\n      alert(message)\n    }\n  }\n})"
+    },
+    {
+      "type": "text",
+      "data": "Methods can be executed inside of curly brackets"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"app\">\n    <p>{{ sayHello() }}</p>\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "new Vue({\n    el: '#app',\n    data: {\n        title: 'Hello World!'\n    },\n    methods: {\n        sayHello: function() {\n            return 'hello world';\n            // return this.title;\n        }\n    }\n})"
+    },
+    {
+      "type": "text",
+      "data": "Passing Arguments"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"app\">\n    <button v-on:click=\"increase(2)\">Click Me</button>\n    <p>{{ counter }}</p>\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var app = new Vue({\n    el: \"#app\",\n    data: {\n        counter: 0,\n    },\n    methods:{\n        increase: function(step){\n            this.counter += step;\n        },\n    }\n})"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Computed</h3>Methods and computed properites are two approaches, the two are indeed exactly the same. However, the difference is that<b>&nbsp;computed properties are cached</b>&nbsp;based on their dependencies.&nbsp;<div><br></div><div>A computed property will only re-evaluate when some of its dependencies have changed. This means as long as message has not changed, multiple access to the reversedMessage computed property will immediately return the previously computed result without having to run the function again.</div><div><br></div><div>always run syncroncysly</div>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"app\">\n    <button v-on:click=\"counter++\">Increase</button>\n    <button v-on:click=\"counter--\">Decrease</button>\n    <p>Counter: {{ counter }}</p>\n    <p>Result: {{ output }}</p>\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var app = new Vue({\n    el: \"#app\",\n    data: {\n        counter: 0,\n    },\n    computed: {\n        output: function () {\n            return this.counter > 5 ? 'Greater 5' : 'Smaller 5'\n        }\n    },\n})"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Watchers</h3><div>Vue does provide a more generic way to observe and react to data changes on a Vue instance: watch properties. When you have some data that needs to change based on some other data, it is tempting to overuse <code>watch</code> - especially if you are coming from an AngularJS background. However, it is often a better idea to use a computed property rather than an imperative <code>watch</code> callback. Consider this example:<br></div><div><br></div>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"demo\">{{ fullName }}</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var vm = new Vue({\n  el: '#demo',\n  data: {\n    firstName: 'Foo',\n    lastName: 'Bar',\n    fullName: 'Foo Bar'\n  },\n  watch: {\n    firstName: function (val) {\n      this.fullName = val + ' ' + this.lastName\n    },\n    lastName: function (val) {\n      this.fullName = this.firstName + ' ' + val\n    }\n  }\n})"
+    },
+    {
+      "type": "text",
+      "data": "The above code is imperative and repetitive. Compare it with a computed property version:"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var vm = new Vue({\n  el: '#demo',\n  data: {\n    firstName: 'Foo',\n    lastName: 'Bar'\n  },\n  computed: {\n    fullName: function () {\n      return this.firstName + ' ' + this.lastName\n    }\n  }\n})"
+    }
+  ]
+}

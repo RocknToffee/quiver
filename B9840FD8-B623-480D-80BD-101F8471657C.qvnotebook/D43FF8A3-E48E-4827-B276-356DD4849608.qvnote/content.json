@@ -1,0 +1,18 @@
+{
+  "title": "Debug",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Useful debugging information"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "dbug($context['search_results']);"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

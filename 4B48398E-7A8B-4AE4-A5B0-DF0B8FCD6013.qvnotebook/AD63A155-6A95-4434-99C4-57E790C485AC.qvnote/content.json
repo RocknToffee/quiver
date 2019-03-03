@@ -1,0 +1,14 @@
+{
+  "title": "iFrames",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Responsive iframe"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//looks for iframes wraps and adapts the height and width\n(function (window, document, undefined) {\n\n    /*\n     * Grab all iframes on the page or return\n     */\n    var iframes = document.getElementsByTagName('iframe');\n\n    /*\n     * Loop through the iframes array\n     */\n    for (var i = 0; i < iframes.length; i++) {\n\n        var iframe = iframes[i],\n\n        /*\n         * RegExp, extend this if you need more players\n         */\n            players = /www.youtube.com|player.vimeo.com/;\n\n        /*\n         * If the RegExp pattern exists within the current iframe\n         */\n        if (iframe.src.search(players) > 0) {\n\n            /*\n             * Calculate the video ratio based on the iframe's w/h dimensions\n             */\n            var videoRatio = ( iframe.height / iframe.width ) * 100;\n\n            /*\n             * Replace the iframe's dimensions and position\n             * the iframe absolute, this is the trick to emulate\n             * the video ratio\n             */\n            iframe.style.position = 'absolute';\n            iframe.style.top = '0';\n            iframe.style.left = '0';\n            iframe.width = '100%';\n            iframe.height = '100%';\n\n            /*\n             * Wrap the iframe in a new <div> which uses a\n             * dynamically fetched padding-top property based\n             * on the video's w/h dimensions\n             */\n            var wrap = document.createElement('div');\n            wrap.className = 'fluid-vids';\n            wrap.style.width = '100%';\n            wrap.style.position = 'relative';\n            wrap.style.paddingTop = videoRatio + '%';\n\n            /*\n             * Add the iframe inside our newly created <div>\n             */\n            var iframeParent = iframe.parentNode;\n            iframeParent.insertBefore(wrap, iframe);\n            wrap.appendChild(iframe);\n\n        }\n\n    }\n\n})(window, document);"
+    }
+  ]
+}

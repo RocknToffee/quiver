@@ -1,0 +1,19 @@
+{
+  "title": "02: Vue Instance",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<p>Every Vue application starts by creating a new <strong>Vue instance</strong> with the <code>Vue</code> function:</p>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var vm = new Vue({\n  // options\n})"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var app = new Vue({\n    el: \"#app\", // Connect to the Dom\n    data: {\n      // Stored data to be used in the dom\n    },\n    methods: {\n      // Methods of this vue instance\n    },\n    computed: {\n      // Dependant Properties\n    },\n    watch: {\n      // Execute code upon data changes\n    },\n})"
+    }
+  ]
+}

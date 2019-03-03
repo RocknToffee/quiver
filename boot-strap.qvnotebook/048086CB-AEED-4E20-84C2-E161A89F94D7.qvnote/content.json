@@ -1,0 +1,123 @@
+{
+  "title": "Mixins",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h1>@mixin make-row()</h1><div><a href=\"https://github.com/twbs/bootstrap-sass/blob/881ce27c6b4101698ea849283933203e20861a33/assets/stylesheets/bootstrap/mixins/_grid.scss#L15-L19\" style=\"box-sizing: border-box; color: rgb(24, 150, 151); text-decoration: none; line-height: inherit; transition: all 0.2s ease; -webkit-transition: all 0.2s ease; word-wrap: break-word; padding: 5px 0px 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(24, 150, 151, 0.498039);\">The&nbsp;<code class=\" language-undefined\" style=\"box-sizing: border-box; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 1em; color: rgb(0, 0, 0); background-color: rgb(245, 242, 240); padding: 0.1em; border-top-left-radius: 0.3em; border-top-right-radius: 0.3em; border-bottom-right-radius: 0.3em; border-bottom-left-radius: 0.3em; text-shadow: rgb(255, 255, 255) 0px 1px; word-spacing: normal; word-break: normal; word-wrap: normal; line-height: 1.5; tab-size: 4; background-position: initial initial; background-repeat: initial initial;\">make-row()</code>&nbsp;mixin</a>&nbsp;does exactly what it says, generating a row in a grid. Why use this mixin versus just adding the&nbsp;<code class=\" language-undefined\" style=\"box-sizing: border-box; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 1em; color: rgb(0, 0, 0); background-color: rgb(245, 242, 240); padding: 0.1em; border-top-left-radius: 0.3em; border-top-right-radius: 0.3em; border-bottom-right-radius: 0.3em; border-bottom-left-radius: 0.3em; text-shadow: rgb(255, 255, 255) 0px 1px; word-spacing: normal; word-break: normal; word-wrap: normal; line-height: 1.5; tab-size: 4; background-position: initial initial; background-repeat: initial initial;\">.row</code>&nbsp;class? Two reasons. The first is that we can use semantic code, so instead of:</div>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div class=\"row\">"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"font-family: Roboto, 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif; font-size: 16px; orphans: 2; widows: 2; word-spacing: 0.30000001192092896px;\">we can use something like:</span>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<section>"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"font-family: Roboto, 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif; font-size: 16px; orphans: 2; widows: 2; word-spacing: 0.30000001192092896px;\">This way, we can use an appropriate tag (</span><code class=\" language-undefined\" style=\"font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; line-height: 1.5; padding: 0.1em; font-size: 1em; border-top-left-radius: 0.3em; border-top-right-radius: 0.3em; border-bottom-right-radius: 0.3em; border-bottom-left-radius: 0.3em; orphans: 2; widows: 2; box-sizing: border-box; text-shadow: rgb(255, 255, 255) 0px 1px; word-spacing: normal; word-break: normal; word-wrap: normal; tab-size: 4;\">section</code><span style=\"font-family: Roboto, 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif; font-size: 16px; orphans: 2; widows: 2; word-spacing: 0.30000001192092896px;\">,</span><span style=\"font-family: Roboto, 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif; font-size: 16px; orphans: 2; widows: 2; word-spacing: 0.30000001192092896px;\">&nbsp;</span><code class=\" language-undefined\" style=\"font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; line-height: 1.5; padding: 0.1em; font-size: 1em; border-top-left-radius: 0.3em; border-top-right-radius: 0.3em; border-bottom-right-radius: 0.3em; border-bottom-left-radius: 0.3em; orphans: 2; widows: 2; box-sizing: border-box; text-shadow: rgb(255, 255, 255) 0px 1px; word-spacing: normal; word-break: normal; word-wrap: normal; tab-size: 4;\">article</code><span style=\"font-family: Roboto, 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif; font-size: 16px; orphans: 2; widows: 2; word-spacing: 0.30000001192092896px;\">, etc.) to specify a portion of the page. This can potentially make the code easier to read and understand what content goes in that row. All we have to do now is</span>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "section {\n    @include make-row();\n}"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"font-family: Roboto, 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif; font-size: 16px; orphans: 2; widows: 2; word-spacing: 0.30000001192092896px;\">Very useful as you can see, but the real utility of this mixin is unlocked when you combine its usage with the next mixin.</span>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": "<h1>@mixin make-*-column()</h1><div>This mixin works in conjunction with&nbsp;<code class=\" language-undefined\" style=\"box-sizing: border-box; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 1em; color: rgb(0, 0, 0); background-color: rgb(245, 242, 240); padding: 0.1em; border-top-left-radius: 0.3em; border-top-right-radius: 0.3em; border-bottom-right-radius: 0.3em; border-bottom-left-radius: 0.3em; text-shadow: rgb(255, 255, 255) 0px 1px; word-spacing: normal; word-break: normal; word-wrap: normal; line-height: 1.5; tab-size: 4; background-position: initial initial; background-repeat: initial initial;\">@mixin make-row()</code>&nbsp;and is really&nbsp;<a href=\"https://github.com/twbs/bootstrap-sass/blob/881ce27c6b4101698ea849283933203e20861a33/assets/stylesheets/bootstrap/mixins/_grid.scss#L22-L122\" style=\"box-sizing: border-box; color: rgb(24, 150, 151); text-decoration: none; line-height: inherit; transition: all 0.2s ease; -webkit-transition: all 0.2s ease; word-wrap: break-word; padding: 5px 0px 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(24, 150, 151, 0.498039);\">a group of mixins</a>. One of the mixins allows you to define the size of column you want to use while the others allow you to push, pull, and offset columns.<br>If you are familiar with Bootstrap (or any grid system), the grid system is based on rows that contain columns. Since there will probably never be a situation where you use one of the column mixins without the&nbsp;<code class=\" language-undefined\" style=\"box-sizing: border-box; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 1em; color: rgb(0, 0, 0); background-color: rgb(245, 242, 240); padding: 0.1em; border-top-left-radius: 0.3em; border-top-right-radius: 0.3em; border-bottom-right-radius: 0.3em; border-bottom-left-radius: 0.3em; text-shadow: rgb(255, 255, 255) 0px 1px; word-spacing: normal; word-break: normal; word-wrap: normal; line-height: 1.5; tab-size: 4; background-position: initial initial; background-repeat: initial initial;\">make-row()</code>&nbsp;mixin and vice versa, you can have something like this to create the columns/rows:</div>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "section {\n    @include make-row();\n    article {\n        @include make-lg-column(2);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "data": "<div><span style=\"color: rgb(58, 58, 58); font-family: Roboto, 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif; font-size: 16px; font-variant-ligatures: normal; orphans: 2; widows: 2; word-spacing: 0.3px; background-color: rgb(255, 255, 255);\">The parent section creates the row that contains our nested columns. In this case each article will consist of 2 columns. As a result, you can create up to 6 article sections to span the page’s 12 columns.</span></div>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<section>\n    <article>column 1</article>\n    <article>column 2</article>\n<section>"
+    },
+    {
+      "type": "text",
+      "data": "<div><font face=\"Roboto, Helvetica Neue, Helvetica, Helvetica, Arial, sans-serif\" size=\"3\"><span style=\"word-spacing: 0.30000001192092896px;\">If you have a site where each page has the same layout, you can create the entire layout in Sass. Even if each page is different, you can benefit by using these mixins to layout static parts of the site such as headers and footers.</span></font></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h1>@mixin size()</h1><div>The&nbsp;<a href=\"https://github.com/twbs/bootstrap-sass/blob/881ce27c6b4101698ea849283933203e20861a33/assets/stylesheets/bootstrap/mixins/_size.scss#L3-L6\" style=\"box-sizing: border-box; color: rgb(24, 150, 151); text-decoration: none; line-height: inherit; transition: all 0.2s ease; -webkit-transition: all 0.2s ease; word-wrap: break-word; padding: 5px 0px 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(24, 150, 151, 0.498039);\">size() mixin</a>&nbsp;is a simple but extremely useful mixin. When creating rows and columns in Bootstrap, the default behavior is to size the columns based on their content. This is fine in a lot of situations, but sometimes you need a specific size. Thats where the size mixin comes in. It takes two arguments – width and height:</div>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ".example {\n    @include size (16%, 300px)\n}"
+    },
+    {
+      "type": "text",
+      "data": "<div><span style=\"color: rgb(58, 58, 58); font-family: Roboto, 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif; font-size: 16px; font-variant-ligatures: normal; orphans: 2; widows: 2; word-spacing: 0.3px; background-color: rgb(255, 255, 255);\">In this case I chose a percentage for the width (keeping it responsive). Of course you could always just set the width and height manually in plain CSS, but this does the same thing in a single line of code. This mixin also has a companion&nbsp;</span><a href=\"https://github.com/twbs/bootstrap-sass/blob/881ce27c6b4101698ea849283933203e20861a33/assets/stylesheets/bootstrap/mixins/_size.scss#L8-L10\" style=\"box-sizing: border-box; color: rgb(24, 150, 151); text-decoration: none; line-height: inherit; transition: all 0.2s ease; -webkit-transition: all 0.2s ease; word-wrap: break-word; padding: 5px 0px 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(24, 150, 151, 0.498039); font-family: Roboto, 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif; font-size: 16px; font-variant-ligatures: normal; orphans: 2; widows: 2; word-spacing: 0.3px; background-color: rgb(255, 255, 255);\">@mixin square()</a><span style=\"color: rgb(58, 58, 58); font-family: Roboto, 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif; font-size: 16px; font-variant-ligatures: normal; orphans: 2; widows: 2; word-spacing: 0.3px; background-color: rgb(255, 255, 255);\">, which takes a single argument.</span></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h1>@mixin panel-variant()</h1><div>One of the knocks most people have with Bootstrap is that most sites created with it look the same. This is because many people take the stock components and use them as is. Although this is perfectly fine, many of us who use Bootstrap customize every component we use.<br>The&nbsp;<a href=\"https://github.com/twbs/bootstrap-sass/blob/881ce27c6b4101698ea849283933203e20861a33/assets/stylesheets/bootstrap/mixins/_panels.scss\" style=\"box-sizing: border-box; color: rgb(24, 150, 151); text-decoration: none; line-height: inherit; transition: all 0.2s ease; -webkit-transition: all 0.2s ease; word-wrap: break-word; padding: 5px 0px 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(24, 150, 151, 0.498039);\">panel-variant() mixin</a>&nbsp;helps in that regard by letting you easily style&nbsp;<a href=\"http://getbootstrap.com/components/#panels\" style=\"box-sizing: border-box; color: rgb(24, 150, 151); text-decoration: none; line-height: inherit; transition: all 0.2s ease; -webkit-transition: all 0.2s ease; word-wrap: break-word; padding: 5px 0px 0px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgba(24, 150, 151, 0.498039);\">panels</a>. The mixin takes four arguments&nbsp;<code class=\" language-undefined\" style=\"box-sizing: border-box; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 1em; color: rgb(0, 0, 0); background-color: rgb(245, 242, 240); padding: 0.1em; border-top-left-radius: 0.3em; border-top-right-radius: 0.3em; border-bottom-right-radius: 0.3em; border-bottom-left-radius: 0.3em; text-shadow: rgb(255, 255, 255) 0px 1px; word-spacing: normal; word-break: normal; word-wrap: normal; line-height: 1.5; tab-size: 4; background-position: initial initial; background-repeat: initial initial;\">$border</code>,&nbsp;<code class=\" language-undefined\" style=\"box-sizing: border-box; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 1em; color: rgb(0, 0, 0); background-color: rgb(245, 242, 240); padding: 0.1em; border-top-left-radius: 0.3em; border-top-right-radius: 0.3em; border-bottom-right-radius: 0.3em; border-bottom-left-radius: 0.3em; text-shadow: rgb(255, 255, 255) 0px 1px; word-spacing: normal; word-break: normal; word-wrap: normal; line-height: 1.5; tab-size: 4; background-position: initial initial; background-repeat: initial initial;\">$heading-text-color</code>,&nbsp;<code class=\" language-undefined\" style=\"box-sizing: border-box; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 1em; color: rgb(0, 0, 0); background-color: rgb(245, 242, 240); padding: 0.1em; border-top-left-radius: 0.3em; border-top-right-radius: 0.3em; border-bottom-right-radius: 0.3em; border-bottom-left-radius: 0.3em; text-shadow: rgb(255, 255, 255) 0px 1px; word-spacing: normal; word-break: normal; word-wrap: normal; line-height: 1.5; tab-size: 4; background-position: initial initial; background-repeat: initial initial;\">$heading-bg-color</code>, and&nbsp;<code class=\" language-undefined\" style=\"box-sizing: border-box; font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; font-size: 1em; color: rgb(0, 0, 0); background-color: rgb(245, 242, 240); padding: 0.1em; border-top-left-radius: 0.3em; border-top-right-radius: 0.3em; border-bottom-right-radius: 0.3em; border-bottom-left-radius: 0.3em; text-shadow: rgb(255, 255, 255) 0px 1px; word-spacing: normal; word-break: normal; word-wrap: normal; line-height: 1.5; tab-size: 4; background-position: initial initial; background-repeat: initial initial;\">$heading-border</code>.</div>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ".panelrow {\n    @include panel-variant(#d01919, #1cf21c, #000000, #bad017);\n}"
+    },
+    {
+      "type": "text",
+      "data": "<div>In this example, I’ve created a class that includes the mixin and that will be used alongside Bootstrap’s panel classes</div>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div class=\"panel panel-default panelrow\">\n    <div class=\"panel-heading\">\n        <h3 class=\"panel-title\">Panel title</h3>\n    </div>\n    <div class=\"panel-body\">\n        Panel content\n    </div>\n</div>"
+    },
+    {
+      "type": "text",
+      "data": "<h1>@mixin button-variant()</h1><div>Another mixin designed to let you easily customize Bootstrap components, the button-variant() mixin lets you style buttons. This mixin takes three arguments – $color, $background, and $border:</div>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ".custom-btn {\n        @include button-variant(#cece19, #000000, #2dbe27);\n    }"
+    },
+    {
+      "type": "text",
+      "data": "<h1>@mixin gradient-*()</h1><div>This is actually a group of mixins that allow you to quickly create CSS gradients.</div><div><br></div><div>Examples include gradient-horizontal(), gradient-vertical(), and gradient-horizontal-three-colors(). Each mixin takes different arguments, so be sure to look at the source to determine which arguments you need.</div><div><br></div><div>The following mixin takes four arguments – $start-color, $end-color, $start-percent, $end-percent:</div>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ".example {\n        @include gradient-horizontal(#1834cc, #1dc937, 0%, 100%);\n    }"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

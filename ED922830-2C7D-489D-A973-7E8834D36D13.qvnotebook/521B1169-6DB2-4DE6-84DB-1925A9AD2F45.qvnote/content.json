@@ -1,0 +1,18 @@
+{
+  "title": "Page Link ( ACF - PHP )",
+  "cells": [
+    {
+      "type": "text",
+      "data": "TEMPLATE"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "//IF BUTTON SELECT\nif ($field['checkbox_flex_cta_text'] == true) {\n    //ON SITE LINK\n    if ($field['button_flex_select'] == 'on-site') { ?>\n        <a class=\"main_cta\"\n           href=\"<?php echo $field['page_link_flexible_text'] ?>\"><?php echo $field['flex_text_button_text'] ?></a>\n        <?php\n    } //OFF SITE LINK\n    elseif ($field['button_flex_select'] == 'off-site') { ?>\n        <a class=\"main_cta\" target=\"_blank\"\n           href=\"<?php echo $field['site_link_flexible_text'] ?>\"><?php echo $field['flex_text_button_text'] ?></a>\n        <?php\n    }\n}\n?>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

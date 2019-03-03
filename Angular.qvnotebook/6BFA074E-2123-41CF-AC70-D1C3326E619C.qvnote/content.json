@@ -1,0 +1,98 @@
+{
+  "title": "Directives",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h2>Structural Directives</h2><div><ul><li>Looks like a normal HTML Attribute but have a leading *&nbsp;</li><li>Affect a whole area in the DOM (elements get added/removed</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>*ngFor</h3>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<li *ngFor=\"let number of numbers\">{{ number }}</li>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>*ngIf</h3>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<li *ngIf=\"oddNumber\"> Oddn Number</li>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>*ngSwitch</h3>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": " <div [ngSwitch]=\"value\">\n      <p *ngSwitchCase=\"5\">Value is 5</p>\n      <p *ngSwitchCase=\"10\">Value is 10</p>\n      <p *ngSwitchCase=\"100\">Value is 100</p>\n      <p *ngSwitchDefault>Value is Default</p>\n</div>"
+    },
+    {
+      "type": "text",
+      "data": "<h2>Attribute Directives</h2><div><ul><li>Look like a normal HTML Attribute</li><li>Only affect/chnage the element they are added to</li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>ngClass</h3>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<li [ngClass]={odd: odd % 2 !== 0}>Not Odd</li>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>ngStyle</h3>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<li [ngStyle]={backgroundColor: odd % 2 !== 0 ? 'yellow' :'transparent'}>Not Odd</li>"
+    },
+    {
+      "type": "text",
+      "data": "<h2>Custom Directives</h2><div>ElementRef works on the dom</div>"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "import {Directive, ElementRef, OnInit} from \"@angular/core\";\n\n@Directive({\n    selector: '[appBasic]'\n})\nexport class BasicDirective implements OnInit {\n    constructor(private elementRef: ElementRef) {}\n    ngOnInit() {\n        this.elementRef.nativeElement.style.backgroundColor = 'green';\n    }\n}"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": " <p appBasicHighlight> style me with basic</p>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>via Renderer</h3><div>angular isn’t limited to running in the browser, the renderer does ensure there are no errors</div>"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "import {Directive, OnInit, Renderer2,ElementRef} from '@angular/core';\n\n@Directive({\n    selector: '[appBetterHighlight]'\n})\nexport class BetterHighlightDirective implements OnInit {\n\n    constructor(private elRef: ElementRef, private renderer: Renderer2) {\n    }\n\n    ngOnInit() {\n        this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue')\n    }\n}"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<p appBetterHighlight> style me with basic</p>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "30% Grid",
+  "cells": [
+    {
+      "type": "text",
+      "data": "This set of styles will display dynamic content in 30% width blocks with media quieries that should be adjusted inline with the min-width and wrapper width"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ".block.thirty {\n  //adjust in line with margins\n  width: 32%;\n  //adjust to fit needs then set media queries below\n  min-width: 220px;\n  margin-bottom: 1%;\n  box-sizing: initial;\n  display: inline-block;\n  vertical-align: top;\n  text-align: center;\n  img {\n    max-width: 100%;\n  }\n  &:nth-child(3n+1) {\n    margin-right: 0%;\n  }\n  &:nth-child(3n+2) {\n    margin-left: 2%;\n    margin-right: 2%;\n  }\n  &:nth-child(3n+3) {\n    margin-left: 0%;\n  }\n  @media only screen and (max-width: 716px) {\n    width: 49%;\n    &:nth-child(2n+1) {\n      margin-right: 2%;\n      margin-left: 0%;\n    }\n    &:nth-child(2n+2) {\n      margin-right: 0%;\n      margin-left: 0%;\n    }\n    &:nth-child(3n+3){\n      width:100%;\n    }\n  }\n  @media only screen and (max-width: 500px) {\n    width: 100%;\n    &:nth-child(2n+1) {\n      margin-left: 0%;\n      margin-right: 0%;\n      margin-top: 0%;\n      margin-bottom: 20px\n    }\n    &:nth-child(2n+2) {\n      margin-left: 0%;\n      margin-right: 0%;\n      margin-top: 0%;\n      margin-bottom: 20px\n    }\n  }\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "PHP Snippets",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Remove p tags around images"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "function filter_ptags_on_images($content){\n   return preg_replace('/<p>\\s*(<a .*>)?\\s*(<img .* \\/>)\\s*(<\\/a>)?\\s*<\\/p>/iU', '\\1\\2\\3', $content);\n}\nadd_filter('the_content', 'filter_ptags_on_images');"
+    }
+  ]
+}

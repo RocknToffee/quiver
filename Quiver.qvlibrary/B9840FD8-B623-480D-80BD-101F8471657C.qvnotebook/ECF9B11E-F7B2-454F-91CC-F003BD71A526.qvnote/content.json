@@ -1,0 +1,117 @@
+{
+  "title": "TIMBER",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h2 class=\"h2 tagline\" style=\"text-align: left; box-sizing: border-box; font-size: 32px; line-height: 1; margin: 0px 0px 20px; font-family: proxima-nova, Helvetica, Arial, sans-serif; font-weight: 300; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; color: rgb(29, 29, 29); font-variant-ligatures: normal; font-variant-position: normal; font-variant-numeric: normal; font-variant-alternates: normal; font-variant-east-asian: normal; widows: 1; background-color: rgb(255, 255, 255);\">Presenting a faster, easier and more powerful way to build themes. Because&nbsp;<strong style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial;\">WordPress</strong>&nbsp;is awesome, but the&nbsp;loop&nbsp;isn’t.</h2><div><h3><span style=\"font-weight: normal;\">Timber helps you create fully-customized WordPress themes faster with more sustainable code. With Timber, you write your HTML using the&nbsp;<a href=\"http://twig.sensiolabs.org/\" target=\"_blank\" style=\"box-sizing: border-box; color: rgb(0, 147, 68); margin: 0px; padding: 0px; vertical-align: baseline; text-decoration: none; background-position: initial initial; background-repeat: initial initial;\">Twig Template Engine</a>&nbsp;separate from your PHP files.&nbsp;This cleans-up your theme code so your PHP file can focus on supplying the data and logic, while your twig file can focus 100% on the display and HTML.</span></h3></div>"
+    },
+    {
+      "type": "text",
+      "data": "Links:<div><ul><li><a href=\"http://upstatement.com/timber/\">http://upstatement.com/timber/</a><br></li><li><a href=\"https://github.com/timber/timber\">https://github.com/timber/timber</a><br></li><li><a href=\"http://timber.github.io/timber/#getting-started\">http://timber.github.io/timber/#getting-started</a><br></li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"color: rgb(221, 221, 221);\">Template URL</span>"
+    },
+    {
+      "type": "code",
+      "language": "twig",
+      "data": "<img src=\"{{ function('get_template_directory_uri', '/') }}/dist/images/\">"
+    },
+    {
+      "type": "text",
+      "data": "Home URL"
+    },
+    {
+      "type": "code",
+      "language": "twig",
+      "data": "<a href=\"{{ function('home_url', '/') }}/\">LINK</a>"
+    },
+    {
+      "type": "text",
+      "data": "Short code"
+    },
+    {
+      "type": "code",
+      "language": "twig",
+      "data": "{% filter shortcodes %}\n    [contact-form-7 id=\"239\" title=\"Sign up\"]\n{% endfilter %}"
+    },
+    {
+      "type": "text",
+      "data": "ACF get field"
+    },
+    {
+      "type": "code",
+      "language": "twig",
+      "data": "{{post.get_field('field_name')}}"
+    },
+    {
+      "type": "text",
+      "data": "Wordpress get field"
+    },
+    {
+      "type": "code",
+      "language": "twig",
+      "data": "{{post.content}}"
+    },
+    {
+      "type": "text",
+      "data": "Repeater field"
+    },
+    {
+      "type": "code",
+      "language": "twig",
+      "data": "{% for item in post.get_field('block') %}\n  <div class=\"block\">\n      <div class=\"image\" style=\"background-image: url('{{TimberImage(item.image)|resize(600, 600, '#FFFFFF')}}')\">\n          <h3>{{item.text}}</h3>\n      </div>\n  </div>\n{% endfor %}"
+    },
+    {
+      "type": "text",
+      "data": "Image"
+    },
+    {
+      "type": "code",
+      "language": "twig",
+      "data": "<img src=\"{{TimberImage(post.get_field('field_name')).src}}\">\n<img src=\"{{ TimberImage(post.get_field('field_name')).src|resize(300, 300, '#FFFFFF','top') }}\">"
+    },
+    {
+      "type": "text",
+      "data": "Menu"
+    },
+    {
+      "type": "code",
+      "language": "twig",
+      "data": "{% for item in menu.get_items %}\n  <li class=\"nav-main-item {{item.classes | join(' ')}}\"><a class=\"nav-main-link\" href=\"{{item.get_link}}\">{{item.title}}</a>\n    {% if item.get_children %}\n        <ul class=\"nav-drop\">\n            {% for child in item.get_children %}\n                <li class=\"nav-drop-item\"><a href=\"{{child.get_link}}\">{{child.title}}</a></li>\n            {% endfor %}\n        </ul>\n    {% endif %}\n  </li>\n{% endfor %}"
+    },
+    {
+      "type": "text",
+      "data": "Flexible layout"
+    },
+    {
+      "type": "code",
+      "language": "twig",
+      "data": "{% for item in post.get_field('flexible_content') %}\n    {% if item.acf_fc_layout == 'text' %}\n        <div class=\"block\">\n            {{ item.text }}\n        </div>\n    {% elseif item.acf_fc_layout == 'text-image' %}\n        <div class=\"block\">\n            {{ item.text }}\n        </div>\n        <div class=\"block\">\n            <img src=\"{{ TimberImage(item.image) }}\">\n        </div>\n    {% endif %}\n{% endfor %}"
+    },
+    {
+      "type": "text",
+      "data": "News menu block"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "$context['news'] = Timber::get_posts('post_type=post&posts_per_page=5&orderby=menu_order');"
+    },
+    {
+      "type": "code",
+      "language": "twig",
+      "data": "{% for item in news %}\n    <div class=\"block\">\n        <div class=\"inner_block\">\n            <div class=\"upper\">\n                <img src=\"{{ item.get_thumbnail.get_src|resize(300, 200, '#FFFFFF','top')}}\"/>\n            </div>\n            <div class=\"lower\">\n                <h2>{{ item.post_title }}</h2>\n                <p>Posted on {{item.post_date|date(\"d/m/Y\")}}</p>\n                <p>{{ item.get_preview(20,false,'READ MORE....') }}</p>\n            </div>\n        </div>\n    </div>\n{% endfor %}"
+    },
+    {
+      "type": "text",
+      "data": "Slice"
+    },
+    {
+      "type": "code",
+      "language": "twig",
+      "data": "<div class=\"block left\">\n    {% for item in getting_there|slice (0,4) %}\n        <div class=\"inner_block\">\n            <div class=\"left\">\n                <img src=\"{{TimberImage(item.get_field('icon')).src}}\">\n            </div>\n            <div class=\"right\">\n                {{item.get_field('text')}}\n            </div>\n        </div>\n    {% endfor %}\n</div>\n<div class=\"block right\">\n    {% for item in getting_there|slice (4,6) %}\n        <div class=\"inner_block\">\n            <div class=\"left\">\n                <img src=\"{{TimberImage(item.get_field('icon')).src}}\">\n            </div>\n            <div class=\"right\">\n                {{item.get_field('text')}}\n            </div>\n        </div>\n    {% endfor %}\n</div>"
+    }
+  ]
+}

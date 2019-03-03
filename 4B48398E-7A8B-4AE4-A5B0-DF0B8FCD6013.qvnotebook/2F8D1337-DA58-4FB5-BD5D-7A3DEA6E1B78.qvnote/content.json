@@ -1,0 +1,10 @@
+{
+  "title": "General",
+  "cells": [
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<!DOCTYPE html>\n<html>\n    <head></head>\n    <body>\n        <script>\n\nconsole.log(\"Hello, Vue! 🎉\")\n\n// this is a single-line comment\n\n/*\n  this is a multiline comment\n*/\n\n// this is a multiple single-line comments\n// this is a multiple single-line comments\n// this is a multiple single-line comments\n\n\"use strict\"\n\nvar bin = true\nvar str = \"hello, world!\"\nvar num = 3.14\n\nconsole.log(bin)\nconsole.log(str)\nconsole.log(num)\n\nvar arr = [\n\t\"hello, world!\",\n\t\"hello, darkness...\"\n]\n\nconsole.log(arr)\nconsole.log(arr[0])\nconsole.log(arr[1])\n\nvar obj1 = {\n\tkey1: \"val1\", // or \"key1\"\n\tkey2: \"val2\"\n}\n\nconsole.log(obj1)\nconsole.log(obj1.key1)\nconsole.log(obj1.key2)\nconsole.log(obj1[\"key1\"])\nconsole.log(obj1[\"key2\"])\n\nvar obj2 = {\n\tobj3: {\n\t\tkey1: \"val1\",\n\t\tkey2: \"val2\"\n\t},\n}\n\nconsole.log(obj2)\nconsole.log(obj2.obj3)\nconsole.log(obj2.obj3.key1)\nconsole.log(obj2.obj3.key2)\nconsole.log(obj2.obj3[\"key1\"])\nconsole.log(obj2.obj3[\"key2\"])\n\nif (false) {\n\tconsole.log(\"if\")\n} else if (false) {\n\tconsole.log(\"else if\")\n} else {\n\tconsole.log(\"else\")\n}\n\ntrue ? console.log(true) : console.log(false)\n\nfor (var x = 0; x < 3; x++) {\n\tconsole.log(x)\n}\n\nfor (var msg of [\"how\", \"are\", \"you\"]) {\n\tconsole.log(msg)\n}\n\nfunction fun(arg) {\n\tif (!arg) {\n\t\targ = \"world\"\n\t}\n\treturn \"hello, \" + arg + \"!\"\n}\n\nconsole.log(fun)\nconsole.log(fun())\nconsole.log(fun(\"js\"))\n\n        </script>\n    </body>\n</html>"
+    }
+  ]
+}

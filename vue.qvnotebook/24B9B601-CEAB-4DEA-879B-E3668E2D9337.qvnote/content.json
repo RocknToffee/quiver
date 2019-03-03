@@ -1,0 +1,33 @@
+{
+  "title": "03: Directives",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>v-bind</h3><div>Bind a value to a attribute</div>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"app\">\n  <a v-bind:href=\"link\">Google</a>\n  <!--<a :href=\"link\">Google</a>-->\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "new Vue({\n    el: '#app',\n    data: {\n        link: 'http://google.com'\n    },\n})"
+    },
+    {
+      "type": "text",
+      "data": "<h3>v-model</h3><h3><span style=\"font-size: 13px; font-weight: normal;\">two way binding</span><br></h3>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"app\">\n    <input type=\"text\" v-model=\"name\">\n    <p>{{ name }}</p>\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var app = new Vue({\n    el: \"#app\",\n    data: {\n        name: 'George'\n    },\n    methods:{\n    }\n})"
+    }
+  ]
+}

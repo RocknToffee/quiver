@@ -1,0 +1,10 @@
+{
+  "title": "Location Rules",
+  "cells": [
+    {
+      "type": "code",
+      "language": "php",
+      "data": "  array(\n      array(\n          'param' => 'post_type',\n          'operator' => '==',\n          'value' => 'post',\n      ),\n  ),\n  array(\n      array(\n          'param' => 'post_type',\n          'operator' => '==',\n          'value' => 'page',\n      ),\n  ),\n  array(\n      array(\n          'param' => 'post_type',\n          'operator' => '==',\n          'value' => 'attraction',\n      ),\n  ),\n  array(\n    array(\n        'param' => 'page',\n        'operator' => '==',\n        'value' => '19',\n    ),\n),"
+    }
+  ]
+}

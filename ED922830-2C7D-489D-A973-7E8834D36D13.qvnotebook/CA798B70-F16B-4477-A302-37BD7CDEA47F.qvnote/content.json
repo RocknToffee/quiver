@@ -1,0 +1,61 @@
+{
+  "title": "VideoJS & youtube",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Links<div>VideoJS:&nbsp;<a href=\"http://videojs.com/getting-started/\">http://videojs.com/getting-started/</a></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Video JS CSS:&nbsp;<a href=\"http://vjs.zencdn.net/5.17.0/video-js.css\">http://vjs.zencdn.net/5.17.0/video-js.css</a></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Video JS iE8:&nbsp;<a href=\"http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js\">http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js</a></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Video JS JS:&nbsp;<a href=\"http://vjs.zencdn.net/5.17.0/video.js\">http://vjs.zencdn.net/5.17.0/video.js</a></div><div><br><div>Youtube Tech:&nbsp;<a href=\"https://github.com/videojs/videojs-youtube\">https://github.com/videojs/videojs-youtube</a></div></div>"
+    },
+    {
+      "type": "text",
+      "data": "Need to include JS &amp; CSS from VideoJS &amp; the Youtube Tech JS"
+    },
+    {
+      "type": "text",
+      "data": "Full Example"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<!DOCTYPE html>\n<html>\n<head>\n  <link type=\"text/css\" rel=\"stylesheet\" href=\"../node_modules/video.js/dist/video-js.min.css\" />\n</head>\n<body>\n  <video\n    id=\"vid1\"\n    class=\"video-js vjs-default-skin\"\n    controls\n    autoplay\n    width=\"640\" height=\"264\"\n    data-setup='{ \"techOrder\": [\"youtube\"], \"sources\": [{ \"type\": \"video/youtube\", \"src\": \"https://www.youtube.com/watch?v=xjS6SftYQaQ\"}] }'\n  >\n  </video>\n\n  <script src=\"../node_modules/video.js/dist/video.min.js\"></script>\n  <script src=\"../dist/Youtube.min.js\"></script>\n</body>\n</html>"
+    },
+    {
+      "type": "text",
+      "data": "MY EXAMPLE&nbsp;"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<section class=\"video\">\n    <div class=\"inner_wrapper\">\n        <div class=\"dark\"></div>\n        <div class=\"block\">\n            <video\n                id=\"vid1\"\n                class=\"video-js\"\n                controls\n                data-setup='{ \"techOrder\": [\"youtube\"], \"sources\": [{ \"type\": \"video/youtube\", \"src\": \"https://www.youtube.com/watch?v=xjS6SftYQaQ\"}] }'\n            >\n            </video>\n\n        </div>\n    </div>\n</section>"
+    },
+    {
+      "type": "text",
+      "data": "JS Fire"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var player = videojs('vid1');\nplayer.play();"
+    },
+    {
+      "type": "text",
+      "data": "&nbsp; Styles"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ".video {\n  margin-bottom: 40px;\n  .inner_wrapper {\n    position: relative;\n    .dark {\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      background-color: rgba(0, 0, 0, 0.4);\n      z-index: 10;\n    }\n    .block {\n      width: 100%;\n      .vjs-poster, .vjs-big-play-button {\n        display: none;\n      }\n    }\n    .block > div {\n      width: 100%;\n      height: 50vw;\n      max-height: 460px;\n      display: inline-block;\n      overflow: hidden;\n\n    }\n    .block > div > div {\n      display: inline-block; /* let it be styled thusly */\n      padding: 0; /* get rid of pre-styling */\n      margin: 0;\n      width: 100%; /* take up full width available */\n      padding-top: 57.25%; /* give aspect ratio of 16:9; \"720 / 1280 = 0.5625\" */\n      height: 0px; /* don't want it to expand beyond padding */\n      position: relative; /* allow for absolute positioning of child elements */\n      iframe {\n        position: absolute; /* expand to fill */\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 0;\n        transform: translateY(-10%);\n      }\n    }\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

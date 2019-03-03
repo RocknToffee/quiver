@@ -1,0 +1,59 @@
+{
+  "title": "SCSS Snippets",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Intro"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"color: rgb(221, 221, 221);\">Useful block layout styles</span><br>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "section {\n  width: 100%;\n  text-align: center;\n  .inner_wrapper {\n    display: inline-block;\n    width: 100%;\n    .block {\n      display: inline-block;\n      vertical-align: top;\n      img {\n        width: 100%;\n      }\n    }\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": "Horrizonal align&nbsp;<div>N.B Use matchHeight.js to ensure a flexible inline height is declared</div>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ".hoz-align {\n  position: relative;\n  top: 50%;\n  transform: translateY(-50%);\n}"
+    },
+    {
+      "type": "text",
+      "data": "Media quiery&nbsp;"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "@media only screen and (max-width: 600px) {}"
+    },
+    {
+      "type": "text",
+      "data": "Triangle line break"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ".tri_linebreak {\n  background-color: transparent;\n  margin-bottom: -20px;\n  z-index: 1;\n  position: absolute;\n  width: 100%;\n  margin-top: -7px;\n\n  .arrow-up {\n    width: 0;\n    height: 0;\n    border-left: 40px solid transparent;\n    border-right: 40px solid transparent;\n    border-bottom: 30px solid $primary;\n    margin: 0 auto;\n  }\n  .arrow-down {\n    width: 0;\n    height: 0;\n    border-left: 40px solid transparent;\n    border-right: 40px solid transparent;\n    border-top: 30px solid $primary;\n    margin: 0 auto;\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": "3x Block grid"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div class=\"inner_wrapper gallery_block3x\">\n    <div class=\"block\">\n         <img src=\"\"/>\n    </div>\n        <div class=\"block\">\n         <img src=\"\"/>\n    </div>\n        <div class=\"block\">\n         <img src=\"\"/>\n    </div>\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ".gallery_block3x {\n  .block {\n    width: 33.3%;\n    margin-bottom: 1%;\n    min-width: 300px;\n    box-sizing: initial;\n    img {\n      max-width: 100%;\n      height: auto;\n    }\n    &:nth-child(3n+1) {\n      margin-right: 0%;\n    }\n    &:nth-child(3n+2) {\n      margin-left: 1%;\n      margin-right: 1%;\n    }\n    &:nth-child(3n+3) {\n      margin-left: 0%;\n    }\n    @media only screen and (max-width: 1020px) {\n      width: 50%;\n      &:nth-child(2n+1) {\n        margin-right: 1%;\n        margin-left: 0%;\n      }\n      &:nth-child(2n+2) {\n        margin-right: 0%;\n        margin-left: 0%;\n      }\n    }\n    @media only screen and (max-width: 680px) {\n      width: 100%;\n      &:nth-child(2n+1) {\n        margin-left: 0%;\n        margin-right: 0%;\n        margin-top: 0%;\n        margin-bottom: 1%\n      }\n      &:nth-child(2n+2) {\n        margin-left: 0%;\n        margin-right: 0%;\n        margin-top: 0%;\n        margin-bottom: 1%\n      }\n    }\n  }\n}"
+    }
+  ]
+}

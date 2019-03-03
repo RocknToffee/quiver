@@ -1,0 +1,127 @@
+{
+  "title": "JavaScript Snippets",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Intro"
+    },
+    {
+      "type": "text",
+      "data": "Console logging"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "console.log('yo')"
+    },
+    {
+      "type": "text",
+      "data": "<div>Control video through a filter block overlay,</div>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "<iframe id=\"video1\" width=\"600\" height=\"600\"src=\"https://www.youtube.com/embed/<?php echo $videolink ?>?autoplay=1&controls=0&volume=0&showinfo=0&modestbranding=1&loop=1&enablejsapi=1&playerapi&id=ytplayer&playlist=<?php echo $videolink ?>\"frameborder=\"0\" allowfullscreen></iframe>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var isClicked = \"\";\n$('#stop').on('click', function () {\n    if (isClicked == \"yes\") {\n        $('#video1')[0].contentWindow.postMessage('{\"event\":\"command\",\"func\":\"' + 'playVideo' + '\",\"args\":\"\"}', '*');\n        isClicked = \"no\";\n        \n    } else if (isClicked == \"no\" || isClicked == \"\") {\n        $('#video1')[0].contentWindow.postMessage('{\"event\":\"command\",\"func\":\"' + 'stopVideo' + '\",\"args\":\"\"}', '*');\n        isClicked = \"yes\";\n    }\n});"
+    },
+    {
+      "type": "text",
+      "data": "Hover play pause"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$( '#stop' ).hover( function () {\n        $('#video1')[0].contentWindow.postMessage('{\"event\":\"command\",\"func\":\"' + 'playVideo' + '\",\"args\":\"\"}', '*');\n}, function () {\n        $('#video1')[0].contentWindow.postMessage('{\"event\":\"command\",\"func\":\"' + 'pauseVideo' + '\",\"args\":\"\"}', '*');\n})"
+    },
+    {
+      "type": "text",
+      "data": "<div>Mute video on page load</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "  function mute() {\n      $('#video1')[0].contentWindow.postMessage('{\"event\":\"command\",\"func\":\"' + 'mute' + '\",\"args\":\"\"}', '*');\n  }\n\n  $('#video1').load(function () {\n      mute();\n  });"
+    },
+    {
+      "type": "text",
+      "data": "Auto Clear form feilds"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "value='Enter Your Email Address' onclick=' this.value = \"\";'"
+    },
+    {
+      "type": "text",
+      "data": "hover animation stop"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "        $('.menu-item-has-children').hover(function() {\n              $(this).children(\".nav-drop\").fadeIn(750);\n              $(this).children(\".nav-drop\").fadeOut(750).stop(true,true);\n        });\n}"
+    },
+    {
+      "type": "text",
+      "data": "Get Current Year"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "document.write(new Date().getFullYear())"
+    },
+    {
+      "type": "text",
+      "data": "Click touch"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(document).on('click touch', function () {"
+    },
+    {
+      "type": "text",
+      "data": "Select last word"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//Select words i related content and wrap last word in a span\n$('.word_select h3').each(function(index, element) {\n    var heading = $(element), word_array, last_word, first_part;\n\n    word_array = heading.html().split(/\\s+/); // split on spaces\n    last_word = word_array.pop();             // pop the last word\n    first_part = word_array.join(' ');        // rejoin the first words together\n\n    heading.html([first_part, '</br><span>', last_word, '</span>'].join(''));\n});"
+    },
+    {
+      "type": "text",
+      "data": "detect Key Press (esc)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(document).on('keyup',function(evt) {\n      if (evt.keyCode == 27) {\n          $('.weather_widget').fadeOut();\n      }\n  })"
+    },
+    {
+      "type": "text",
+      "data": "Detect click only on parent"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('.weather_widget').on('click', function(e) {\n    if (e.target !== this)\n        return;\n    $('.weather_widget').fadeOut();\n});"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "//CLOSE WINDOW IF CLICK ANYWHERE OUTSIDE OF THE WIDGET\n$('.weather_widget').on('click', function(e) {\n    if (e.target !== this)\n        return;\n    $('.weather_widget').fadeOut();\n});"
+    },
+    {
+      "type": "text",
+      "data": "Browser Detecton"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;\nvar is_explorer = navigator.userAgent.indexOf('MSIE') > -1;\nvar is_firefox = navigator.userAgent.indexOf('Firefox') > -1;\nvar is_safari = navigator.userAgent.indexOf(\"Safari\") > -1;\nvar is_opera = navigator.userAgent.toLowerCase().indexOf(\"op\") > -1;\nif (is_safari) {\n    console.log('Safari')\n}\nif (is_chrome) {\n    console.log('Chrome')\n}\nif (is_firefox) {\n    console.log('Firefox')\n}\nif (is_explorer) {\n    console.log('Explorer')\n}\nif (is_opera) {\n    console.log('Opera')\n}"
+    }
+  ]
+}

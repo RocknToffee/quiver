@@ -1,0 +1,28 @@
+{
+  "title": "01: General",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div><a href=\"https://vuejs.org/v2/guide/index.html\">https://vuejs.org/v2/guide/index.html</a><br></div><div><a href=\"https://vuejs.org/v2/api/\">https://vuejs.org/v2/api/</a><br></div><div><a href=\"https://scrimba.com/g/glearnvue\">https://scrimba.com/g/glearnvue</a><br></div><div><a href=\"https://jsfiddle.net/user/smax/fiddles/\">https://jsfiddle.net/user/smax/fiddles/</a></div><div><br></div>Vue (pronounced /vjuː/, like <strong>view</strong>) is a <strong>progressive framework</strong>\n for building user interfaces. Unlike other monolithic frameworks, Vue \nis designed from the ground up to be incrementally adoptable. The core \nlibrary is focused on the view layer only, and is easy to pick up and \nintegrate with other libraries or existing projects. On the other hand, \nVue is also perfectly capable of powering sophisticated Single-Page \nApplications when used in combination with <a href=\"https://vuejs.org/v2/guide/single-file-components.html\">modern tooling</a> and <a href=\"https://github.com/vuejs/awesome-vue#components--libraries\" target=\"_blank\" rel=\"noopener\">supporting libraries</a>.<div><br></div><div>CDN:&nbsp;</div>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<!-- development version, includes helpful console warnings -->\n<script src=\"https://cdn.jsdelivr.net/npm/vue/dist/vue.js\"></script>\n\n<!-- production version, optimized for size and speed -->\n<script src=\"https://cdn.jsdelivr.net/npm/vue\"></script>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Example: Interpolation</h3>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"app\">\n    <p>{{ message }}</p>\n    <p v-text=\"message\"></p>\n    <p v-html=\"htmlMessage\"></p>\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "java",
+      "data": "var app = new Vue({\n    el: '#app',\n    data: {\n        message: 'Hello Vue!',\n        htmlMessage: 'Hello <br> Vue!'\n    }\n}"
+    }
+  ]
+}

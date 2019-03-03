@@ -1,0 +1,10 @@
+{
+  "title": "Tabs",
+  "cells": [
+    {
+      "type": "code",
+      "language": "php",
+      "data": "  array(\n      'key' => 'field_attraction_wnb_tab5_related_trips',\n      'label' => 'Related itineraries Label',\n      'name' => '',\n      'type' => 'tab',\n      'instructions' => '',\n      'required' => 0,\n      'conditional_logic' => 0,\n      'wrapper' => array(\n          'width' => '',\n          'class' => '',\n          'id' => '',\n      ),\n      'placement' => 'left',\n      'endpoint' => 1,\n  ),"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "title": "08: Conditional Rendering",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3><code><a href=\"https://vuejs.org/v2/guide/conditional.html#v-if\" class=\"headerlink\" title=\"v-if\" data-scroll=\"\">v-if</a>:</code>&nbsp;</h3><h3><span style=\"font-size: 13px;\">In Vue, we use the</span><span style=\"font-size: 13px;\">&nbsp;</span><code style=\"font-size: 11.699999809265137px; background-color: rgba(255, 255, 255, 0.0980392);\">v-if</code><span style=\"font-size: 13px;\">&nbsp;</span><span style=\"font-size: 13px;\">directive to achieve the same:</span></h3>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<h1 v-if=\"ok\">Yes</h1>"
+    },
+    {
+      "type": "text",
+      "data": "<p>It is also possible to add an “else block” with <code>v-else</code>:</p>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<h1 v-if=\"ok\">Yes</h1>\n<h1 v-else>No</h1>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Conditional Groups with <code>v-if</code> on <code>&lt;template&gt;</code></h3><div>Because <code>v-if</code>​&nbsp;is a directive, it has to be attached to a single element. But what if we want to toggle more than one element? In this case we can use <code>v-if</code> on a <code>&lt;template&gt;</code> element, which serves as an invisible wrapper. The final rendered result will not include the <code>&lt;template&gt;</code> element.<br></div>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<template v-if=\"ok\">\n  <h1>Title</h1>\n  <p>Paragraph 1</p>\n  <p>Paragraph 2</p>\n</template>"
+    },
+    {
+      "type": "text",
+      "data": "<h3><hr></h3><h3><code><a href=\"https://vuejs.org/v2/guide/conditional.html#v-else\" class=\"headerlink\" title=\"v-else\" data-scroll=\"\">v-else</a>:</code>​&nbsp;</h3><h3><span style=\"font-size: 13px;\">You can use the</span>&nbsp;<span style=\"font-size: 13px;\">v-else</span><span style=\"font-size: 13px;\">&nbsp;directive to indicate an “else block” for&nbsp;</span><font size=\"2\">v-if:</font></h3>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div v-if=\"Math.random() > 0.5\">\n  Now you see me\n</div>\n<div v-else>\n  Now you don't\n</div>"
+    },
+    {
+      "type": "text",
+      "data": "A <code>v-else</code> element must immediately follow a <code>v-if</code> or a <code>v-else-if</code> element - otherwise it will not be recognized."
+    },
+    {
+      "type": "text",
+      "data": "<h3 id=\"v-else-if\"><hr></h3><h3 id=\"v-else-if\"><code><a href=\"https://vuejs.org/v2/guide/conditional.html#v-else-if\" class=\"headerlink\" title=\"v-else-if\" data-scroll=\"\">v-else-if</a>:</code>​&nbsp;</h3><h3 id=\"v-else-if\"><span style=\"font-size: 13px;\">The </span><code>v-else-if</code><span style=\"font-size: 13px;\">, as the name suggests, serves as an “else if block” for </span><code>v-if</code><span style=\"font-size: 13px;\">. It can also be chained multiple times:</span></h3>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div v-if=\"type === 'A'\">\n  A\n</div>\n<div v-else-if=\"type === 'B'\">\n  B\n</div>\n<div v-else-if=\"type === 'C'\">\n  C\n</div>\n<div v-else>\n  Not A/B/C\n</div>"
+    },
+    {
+      "type": "text",
+      "data": "Similar to <code>v-else</code>, a <code>v-else-if</code> element must immediately follow a <code>v-if</code> or a <code>v-else-if</code> element."
+    },
+    {
+      "type": "text",
+      "data": "<h3><hr></h3><h3><code><a href=\"https://vuejs.org/v2/guide/conditional.html#v-show\" class=\"headerlink\" title=\"v-show\" data-scroll=\"\">v-show</a><span style=\"font-size: 17.549999237060547px;\">:</span></code>​&nbsp;<span style=\"font-size: 13px;\">Another option for conditionally displaying an element is the </span><code>v-show</code><span style=\"font-size: 13px;\"> directive. The usage is largely the same:</span></h3>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<h1 v-show=\"ok\">Hello!</h1>"
+    },
+    {
+      "type": "text",
+      "data": "The difference is that an element with <code>v-show</code> will always be rendered and remain in the DOM; <code>v-show</code> only toggles the <code>display</code> CSS property of the element.<div><ul><li>Note that <code>v-show</code> doesn’t support the <code>&lt;template&gt;</code> element, nor does it work with <code>v-else</code>.<br></li></ul></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3><a href=\"https://vuejs.org/v2/guide/conditional.html#v-if-vs-v-show\" class=\"headerlink\" title=\"v-if vs v-show\" data-scroll=\"\"><code>v-if</code> vs <code>v-show</code></a></h3><div><p><code>v-if</code> is “real” conditional rendering because it ensures \nthat event listeners and child components inside the conditional block \nare properly destroyed and re-created during toggles.</p>\n<p><code>v-if</code> is also <strong>lazy</strong>: if the condition is \nfalse on initial render, it will not do anything - the conditional block\n won’t be rendered until the condition becomes true for the first time.</p>\n<p>In comparison, <code>v-show</code> is much simpler - the element is always rendered regardless of initial condition, with CSS-based toggling.</p>\n<p>Generally speaking, <code>v-if</code> has higher toggle costs while <code>v-show</code> has higher initial render costs. So prefer <code>v-show</code> if you need to toggle something very often, and prefer <code>v-if</code> if the condition is unlikely to change at runtime.</p></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3><a href=\"https://vuejs.org/v2/guide/conditional.html#v-if-with-v-for\" class=\"headerlink\" title=\"v-if with v-for\" data-scroll=\"\"><code>v-if</code> with <code>v-for</code></a></h3><div><ul><li><strong>Never use <code>v-if</code> on the same element as <code>v-for</code>.</strong><br></li><li>Using <code>v-if</code> and <code>v-for</code> together is <strong>not recommended</strong>. See the <a href=\"https://vuejs.org/v2/style-guide/#Avoid-v-if-with-v-for-essential\">style guide</a> for further information.<br></li></ul><div>When used together with <code>v-if</code>, <code>v-for</code> has a higher priority than <code>v-if</code>. See the <a href=\"https://vuejs.org/v2/guide/list.html#V-for-and-v-if\">list rendering guide</a> for details.<br></div></div><div><br></div>"
+    }
+  ]
+}

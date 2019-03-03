@@ -1,0 +1,35 @@
+{
+  "title": "Glyphicons",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div><span style=\"font-family: Verdana, sans-serif; font-size: 15px;\">Bootstrap provides 260 glyphicons from the</span><span style=\"font-family: Verdana, sans-serif; font-size: 15px;\">&nbsp;</span><a href=\"http://glyphicons.com/\" target=\"_blank\" style=\"font-family: Verdana, sans-serif; font-size: 15px; box-sizing: inherit; color: inherit;\">Glyphicons</a><span style=\"font-family: Verdana, sans-serif; font-size: 15px;\">&nbsp;</span><span style=\"font-family: Verdana, sans-serif; font-size: 15px;\">Halflings set.</span></div><p style=\"box-sizing: inherit; margin: 0px 0px 10px; color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 15px; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);\">Glyphicons can be used in text, buttons, toolbars, navigation, forms, etc.</p>"
+    },
+    {
+      "type": "text",
+      "data": "<a href=\"http://glyphicons.com/\">http://glyphicons.com/</a>"
+    },
+    {
+      "type": "text",
+      "data": "<h2 style=\"box-sizing: inherit; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 400; line-height: 1.5; color: rgb(0, 0, 0); margin: 10px 0px; font-size: 30px; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);\">Glyphicon Syntax</h2><p style=\"box-sizing: inherit; margin: 0px 0px 10px; color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 15px; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);\">A glyphicon is inserted with the following syntax:</p>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<span class=\"glyphicon glyphicon-name\"></span>"
+    },
+    {
+      "type": "text",
+      "data": "<h2 style=\"box-sizing: inherit; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 400; line-height: 1.5; color: rgb(0, 0, 0); margin: 10px 0px; font-size: 30px; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);\">Glyphicon Example</h2><p style=\"box-sizing: inherit; margin: 0px 0px 10px; color: rgb(0, 0, 0); font-family: Verdana, sans-serif; font-size: 15px; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);\">The following example shows different ways to use glyphicons:</p>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<p>Envelope icon: <span class=\"glyphicon glyphicon-envelope\"></span></p> \n<p>Envelope icon as a link:\n  <a href=\"#\"><span class=\"glyphicon glyphicon-envelope\"></span></a>\n</p>\n<p>Search icon: <span class=\"glyphicon glyphicon-search\"></span></p>\n<p>Search icon on a button:\n  <button type=\"button\" class=\"btn btn-default\">\n    <span class=\"glyphicon glyphicon-search\"></span> Search\n  </button>\n</p>\n<p>Search icon on a styled button:\n  <button type=\"button\" class=\"btn btn-info\">\n    <span class=\"glyphicon glyphicon-search\"></span> Search\n  </button>\n</p>\n<p>Print icon: <span class=\"glyphicon glyphicon-print\"></span></p> \n<p>Print icon on a styled link button:\n  <a href=\"#\" class=\"btn btn-success btn-lg\">\n    <span class=\"glyphicon glyphicon-print\"></span> Print \n  </a>\n</p>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

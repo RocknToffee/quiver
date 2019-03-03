@@ -1,0 +1,28 @@
+{
+  "title": "Renderer2",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h2><span style=\"font-family: Roboto, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size: 14px; letter-spacing: 0.3px; orphans: 2; widows: 2;\">Docs:&nbsp;</span><a href=\"https://angular.io/api/core/Renderer2\" style=\"font-size: 13px;\">https://angular.io/api/core/Renderer2</a></h2><h2><span style=\"font-family: Roboto, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size: 14px; letter-spacing: 0.3px; orphans: 2; widows: 2;\">Extend this base class to implement custom rendering. By default, Angular renders a template into DOM. You can use custom rendering to intercept rendering calls, or to render to something other than DOM.</span><br></h2>"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "abstract class Renderer2 {\n  abstract data: {...}\n  destroyNode: ((node: any) => void) | null\n  abstract destroy(): void\n  abstract createElement(name: string, namespace?: string): any\n  abstract createComment(value: string): any\n  abstract createText(value: string): any\n  abstract appendChild(parent: any, newChild: any): void\n  abstract insertBefore(parent: any, newChild: any, refChild: any): void\n  abstract removeChild(parent: any, oldChild: any): void\n  abstract selectRootElement(selectorOrNode: any, preserveContent?: boolean): any\n  abstract parentNode(node: any): any\n  abstract nextSibling(node: any): any\n  abstract setAttribute(el: any, name: string, value: string, namespace?: string): void\n  abstract removeAttribute(el: any, name: string, namespace?: string): void\n  abstract addClass(el: any, name: string): void\n  abstract removeClass(el: any, name: string): void\n  abstract setStyle(el: any, style: string, value: any, flags?: RendererStyleFlags2): void\n  abstract removeStyle(el: any, style: string, flags?: RendererStyleFlags2): void\n  abstract setProperty(el: any, name: string, value: any): void\n  abstract setValue(node: any, value: string): void\n  abstract listen(target: any, eventName: string, callback: (event: any) => boolean | void): () => void\n}"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Example</h3>"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "import {Directive, OnInit, Renderer2,ElementRef} from '@angular/core';\n\n@Directive({\n    selector: '[appBetterHighlight]'\n})\nexport class BetterHighlightDirective implements OnInit {\n\n    constructor(private elRef: ElementRef, private renderer: Renderer2) {\n    }\n\n    ngOnInit() {\n        this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue')\n        this.renderer.addClass(this.elRef.nativeElement, 'george')\n\n    }\n}"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<p appBetterHighlight> style me with basic</p>"
+    }
+  ]
+}

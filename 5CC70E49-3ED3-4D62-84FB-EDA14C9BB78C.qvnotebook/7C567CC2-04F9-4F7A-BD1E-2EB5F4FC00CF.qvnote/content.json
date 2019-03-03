@@ -1,0 +1,122 @@
+{
+  "title": "SCSS Snippets",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Intro"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"color: rgb(221, 221, 221);\">Useful block layout styles</span><br>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "section {\n  width: 100%;\n  text-align: center;\n  .inner_wrapper {\n    display: inline-block;\n    width: 100%;\n    .block {\n      display: inline-block;\n      vertical-align: top;\n      img {\n        width: 100%;\n      }\n    }\n  }\n}"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "section,header,footer {\n  width: 100%;\n  text-align: center;\n  .inner_wrapper {\n    display: inline-block;\n    width: 100%;\n    .block,article {\n      display: inline-block;\n      vertical-align: top;\n      \n      img {\n        width: 100%;\n      }\n    }\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": "Horrizonal align&nbsp;<div>N.B Use matchHeight.js to ensure a flexible inline height is declared</div>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ".hoz-align {\n  position: relative;\n  top: 50%;\n  transform: translateY(-50%);\n}"
+    },
+    {
+      "type": "text",
+      "data": "Media quiery&nbsp;"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "@media only screen and (max-width: 600px) {}"
+    },
+    {
+      "type": "text",
+      "data": "IPhone 4 - 6&nbsp;<span style=\"color: rgb(221, 221, 221);\">&nbsp;Portrait</span>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "@media (min-width: 315px) and (max-width: 425px) and (min-height: 460px) and (max-height: 740px) {}"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"color: rgb(221, 221, 221);\">IPhone 4 - 6&nbsp;</span>&nbsp;Landscape"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "  @media (min-width: 470px) and (max-width: 740px) and (min-height: 310px) and (max-height: 420px) {}"
+    },
+    {
+      "type": "text",
+      "data": "Triangle line break"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ".tri_linebreak {\n  background-color: transparent;\n  margin-bottom: -20px;\n  z-index: 1;\n  position: absolute;\n  width: 100%;\n  margin-top: -7px;\n\n  .arrow-up {\n    width: 0;\n    height: 0;\n    border-left: 40px solid transparent;\n    border-right: 40px solid transparent;\n    border-bottom: 30px solid $primary;\n    margin: 0 auto;\n  }\n  .arrow-down {\n    width: 0;\n    height: 0;\n    border-left: 40px solid transparent;\n    border-right: 40px solid transparent;\n    border-top: 30px solid $primary;\n    margin: 0 auto;\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": "3x Block grid"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div class=\"inner_wrapper gallery_block3x\">\n    <div class=\"block\">\n         <img src=\"\"/>\n    </div>\n        <div class=\"block\">\n         <img src=\"\"/>\n    </div>\n        <div class=\"block\">\n         <img src=\"\"/>\n    </div>\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": "fade in out &amp; stop"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": " <div class=\"block\" style=\"background: linear-gradient(rgba(255,99,0,.2),rgba(255,99,0,.1)), url(<?php echo wp_get_attachment_url($detail['background_image'],'contentBlock'); ?>) no-repeat center/cover;\"></div>\n"
+    },
+    {
+      "type": "text",
+      "data": "Maintain Square Ratio"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "&:after {\n    content: \"\";\n    display: block;\n    padding-bottom: 100%;\n  }"
+    },
+    {
+      "type": "text",
+      "data": "Multiline-highlight background color"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "box-shadow: 10px 0 0 $brand-primary, -10px 0 0 $brand-primary;"
+    },
+    {
+      "type": "text",
+      "data": "Line Before &amp; After"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "        h2:before, h2:after {\n          content: \"\";\n          display: inline-block;\n          width: 50%;\n          margin: 0 .5em 0 -55%;\n          vertical-align: middle;\n          border-bottom: 1px solid;\n\n        }\n        h2:after {\n          margin: 0 -55% 0 .5em;\n          @media only screen and (max-width: 600px) {\n            position: absolute;\n            width: 20%;\n            left: 80%;\n            top: 50%;\n          }\n        }\n        h2:before {\n          @media only screen and (max-width: 600px) {\n            position: absolute;\n            width: 20%;\n            right: 80%;\n            top: 48%;\n          }\n        }"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

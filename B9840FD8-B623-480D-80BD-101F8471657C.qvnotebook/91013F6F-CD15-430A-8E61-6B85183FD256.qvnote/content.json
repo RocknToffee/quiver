@@ -1,0 +1,10 @@
+{
+  "title": "Switch Statement",
+  "cells": [
+    {
+      "type": "code",
+      "language": "php",
+      "data": "<?php\nswitch ($layout) {\n    case 'case'; ?>\n\n<?php break; ?>\n<?php case 'case1'; ?>\n\n\n<?php break; ?>\n\n<?php }\n\n\n?>"
+    }
+  ]
+}

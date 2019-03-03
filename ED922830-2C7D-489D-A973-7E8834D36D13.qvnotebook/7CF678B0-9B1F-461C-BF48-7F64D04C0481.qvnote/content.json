@@ -1,0 +1,36 @@
+{
+  "title": "Tabs",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Simple Responsive Tabs With JavaScript &amp; CSS&nbsp;<div><a href=\"http://callmenick.com/post/simple-responsive-tabs-javascript-css\">http://callmenick.com/post/simple-responsive-tabs-javascript-css</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "HTML"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"tabs\" class=\"c-tabs no-js\">\n  <div class=\"c-tabs-nav\">\n    <a href=\"#\" class=\"c-tabs-nav__link is-active\"></a>\n    <a href=\"#\" class=\"c-tabs-nav__link\"></a>\n  </div>\n  <div class=\"c-tab is-active\">\n    <div class=\"c-tab__content\"></div>\n  </div>\n  <div class=\"c-tab\">\n    <div class=\"c-tab__content\"></div>\n  </div>\n</div>"
+    },
+    {
+      "type": "text",
+      "data": "SCSS"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ".c-tabs-nav {\n  display: flex;\n  list-style: none;\n  margin: 0;\n  padding: 0;\n}\n\n.c-tabs-nav__link {\n  flex: 1;\n  margin-right: 4px;\n  padding: 12px;\n  color: #fff;\n  background-color: #b3b3b3;\n  text-align: center;\n  transition: color 0.3s;\n}\n\n.c-tabs-nav__link:last-child {\n  margin-right: 0;\n}\n\n.c-tabs-nav__link:hover {\n  color: #6d6d6d;\n}\n\n.c-tabs-nav__link.is-active {\n  color: #dc446e;\n  background-color: #e7e7e7;\n}\n\n.c-tabs-nav__link i,\n.c-tabs-nav__link span {\n  margin: 0;\n  padding: 0;\n  line-height: 1;\n}\n\n.c-tabs-nav__link i {\n  font-size: 18px;\n}\n\n.c-tabs-nav__link span {\n  display: none;\n  font-size: 18px;\n}\n\n@media all and (min-width: 720px) {\n  .c-tabs-nav__link i {\n    margin-bottom: 12px;\n    font-size: 22px;\n  }\n  .c-tabs-nav__link span {\n    display: block;\n  }\n}\n/**\n * Tab\n */\n.c-tab {\n  display: none;\n  background-color: #e7e7e7;\n}\n\n.c-tab.is-active {\n  display: block;\n}\n\n.c-tab__content {\n  padding: 1.5rem;\n}\n/**\n * Tabs no-js fallback\n */\n.c-tabs.no-js .c-tabs-nav {\n  display: none;\n}\n\n.c-tabs.no-js .c-tab {\n  display: block;\n  margin-bottom: 1.5rem;\n}\n\n.c-tabs.no-js .c-tab:last-child {\n  margin-bottom: 0;\n}"
+    },
+    {
+      "type": "text",
+      "data": "JavaScript"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "        (function () {\n\n            'use strict';\n\n            /**\n             * tabs\n             *\n             * @description The Tabs component.\n             * @param {Object} options The options hash\n             */\n            var tabs = function (options) {\n\n                var el = document.querySelector(options.el);\n                var tabNavigationLinks = el.querySelectorAll(options.tabNavigationLinks);\n                var tabContentContainers = el.querySelectorAll(options.tabContentContainers);\n                var activeIndex = 0;\n                var initCalled = false;\n\n                /**\n                 * init\n                 *\n                 * @description Initializes the component by removing the no-js class from\n                 *   the component, and attaching event listeners to each of the nav items.\n                 *   Returns nothing.\n                 */\n                var init = function () {\n                    if (!initCalled) {\n                        initCalled = true;\n                        el.classList.remove('no-js');\n\n                        for (var i = 0; i < tabNavigationLinks.length; i++) {\n                            var link = tabNavigationLinks[i];\n                            handleClick(link, i);\n                        }\n                    }\n                };\n\n                /**\n                 * handleClick\n                 *\n                 * @description Handles click event listeners on each of the links in the\n                 *   tab navigation. Returns nothing.\n                 * @param {HTMLElement} link The link to listen for events on\n                 * @param {Number} index The index of that link\n                 */\n                var handleClick = function (link, index) {\n                    link.addEventListener('click', function (e) {\n                        e.preventDefault();\n                        goToTab(index);\n                    });\n                };\n\n                /**\n                 * goToTab\n                 *\n                 * @description Goes to a specific tab based on index. Returns nothing.\n                 * @param {Number} index The index of the tab to go to\n                 */\n                var goToTab = function (index) {\n                    if (index !== activeIndex && index >= 0 && index <= tabNavigationLinks.length) {\n                        tabNavigationLinks[activeIndex].classList.remove('is-active');\n                        tabNavigationLinks[index].classList.add('is-active');\n                        tabContentContainers[activeIndex].classList.remove('is-active');\n                        tabContentContainers[index].classList.add('is-active');\n                        activeIndex = index;\n                    }\n                };\n\n                /**\n                 * Returns init and goToTab\n                 */\n                return {\n                    init: init,\n                    goToTab: goToTab\n                };\n\n            };\n\n            /**\n             * Attach to global namespace\n             */\n            window.tabs = tabs;\n\n        })();\n\n        var myTabs = tabs({\n            el: '#tabs',\n            tabNavigationLinks: '.c-tabs-nav__link',\n            tabContentContainers: '.c-tab'\n        });\n        myTabs.init();"
+    }
+  ]
+}

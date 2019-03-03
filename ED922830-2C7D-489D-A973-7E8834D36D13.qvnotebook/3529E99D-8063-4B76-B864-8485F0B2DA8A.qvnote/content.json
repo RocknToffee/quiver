@@ -1,0 +1,36 @@
+{
+  "title": "Scroll Sticky Bar",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Intro"
+    },
+    {
+      "type": "text",
+      "data": "HTML"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"content-anchor\"></div>\n<div id=\"sticky-phantom\"></div>\n<section id=\"sticky\" class=\"book-banner\">\n    <div class=\"inner_wrapper\">\n        <div class=\"block\">\n            <a href=\"{{ function('home_url', '/') }}\">text</a>\n        </div>\n    </div>\n</section>"
+    },
+    {
+      "type": "text",
+      "data": "SCSS"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ".stuck {\n  position: fixed;\n  width: 100%;\n  top: 0px;\n  z-index: 10000;\n}\n\n#sticky,\n#sticky-phantom {\n  color: #ffffff;\n  width: 100%;\n}\n\n#sticky-phantom {\n  display: none;\n}\n\n#sticky.stick {\n  position: fixed;\n  max-width: 1500px;\n  width: 100%;\n  margin-left: auto;\n  margin-right: auto;\n}\n\n#sticky {\n  z-index: 150;\n  top: 0;\n}\n\n.stuck {\n  position: fixed;\n  width: 100%;\n  top: 0px;\n  z-index: 10000;\n}"
+    },
+    {
+      "type": "text",
+      "data": "JavaScript"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "function sticky_relocate() {\n    var window_top = $(window).scrollTop();\n    var div_top = $('#content-anchor').offset().top;\n\n    if (window_top > div_top) {\n\n        $('#sticky2').addClass('stick');\n\n        // Get the height of #sticky\n        // outerHeight() gets height including padding and borders\n        var phantomHeight = $('#sticky').outerHeight();\n\n        // Set the height of $sticky-phantom\n        $('#sticky-phantom').height(phantomHeight).show();\n\n    } else {\n        $('#sticky').removeClass('stick');\n        $('#sticky-phantom').hide();\n    }\n}\n\nif ($(window).width() < 800) {\n    $(function () {\n        $(window).scroll(sticky_relocate);\n        sticky_relocate2();\n    });\n}"
+    }
+  ]
+}

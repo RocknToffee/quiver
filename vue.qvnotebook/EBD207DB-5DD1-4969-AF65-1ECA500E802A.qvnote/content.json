@@ -1,0 +1,59 @@
+{
+  "title": "04: Events",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>Event Binding</h3><div><a href=\"https://vuejs.org/v2/guide/events.html#Listening-to-Events\">https://vuejs.org/v2/guide/events.html#Listening-to-Events</a><br></div><div><br></div><div>We can use the <code>v-on</code> directive to listen to DOM events and run some JavaScript when they’re triggered.<br></div><div><ul><li><code>&nbsp;v-on:click=“method()”&nbsp;</code>​</li><li><span style=\"background-color: rgba(255, 255, 255, 0.0980392);\">Shorthand: &nbsp;<code>&nbsp;</code></span><code>@click=“method()”&nbsp;</code></li></ul></div><div><div><code style=\"font-size: 11.699999809265137px;\"></code></div><code>:click</code></div><div><code>:mouseover</code></div><div><code>:mouseleave</code></div><div><code>:scroll</code></div><div><div></div></div>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"app\">\n    <p v-on:mousemove=\"updateCoordinates\">Co-ordinates: {{ x }} / {{ y }}</p>\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var app = new Vue({\n    el: \"#app\",\n    data: {\n        x:0,\n        y:1,\n    },\n    methods:{\n        updateCoordinates: function(event){\n            this.x = event.clientX;\n            this.y = event.clientY\n        }\n    }\n})"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Event Modifier</h3><div><a href=\"https://vuejs.org/v2/guide/events.html#Event-Modifiers\" style=\"color: rgb(128, 187, 255);\">https://vuejs.org/v2/guide/events.html#Event-Modifiers</a><div><br></div><div><div>It is a very common need to call event.preventDefault() or event.stopPropagation() inside event handlers. Although we can do this easily inside methods, it would be better if the methods can be purely about data logic rather than having to deal with DOM event details.</div><div><br></div><div>To address this problem, Vue provides event modifiers for v-on. Recall that modifiers are directive postfixes denoted by a dot.</div><div><br></div><div></div><code style=\"font-size: 11.699999809265137px; background-color: rgba(255, 255, 255, 0.0980392);\">.stop</code></div><div><code style=\"font-size: 11.699999809265137px; background-color: rgba(255, 255, 255, 0.0980392);\">.prevent</code></div><div><code style=\"font-size: 11.699999809265137px; background-color: rgba(255, 255, 255, 0.0980392);\">.capture</code></div><div><code style=\"font-size: 11.699999809265137px; background-color: rgba(255, 255, 255, 0.0980392);\">.self</code></div><div><code style=\"font-size: 11.699999809265137px; background-color: rgba(255, 255, 255, 0.0980392);\">.once</code></div><div><code style=\"font-size: 11.699999809265137px; background-color: rgba(255, 255, 255, 0.0980392);\">.passive</code></div></div>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<!-- Event Modification -->\n<div id=\"app\">\n    <p v-on:mousemove=\"updateCoordinates\">Co-ordinates: {{ x }} / {{ y }}\n        <span v-on:mousemove.stop.prevent=\"\"> -- DEAD SPOT --</span>\n    </p>\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<!-- the click event's propagation will be stopped -->\n<a v-on:click.stop=\"doThis\"></a>\n\n<!-- the submit event will no longer reload the page -->\n<form v-on:submit.prevent=\"onSubmit\"></form>\n\n<!-- modifiers can be chained -->\n<a v-on:click.stop.prevent=\"doThat\"></a>\n\n<!-- just the modifier -->\n<form v-on:submit.prevent></form>\n\n<!-- use capture mode when adding the event listener -->\n<!-- i.e. an event targeting an inner element is handled here before being handled by that element -->\n<div v-on:click.capture=\"doThis\">...</div>\n\n<!-- only trigger handler if event.target is the element itself -->\n<!-- i.e. not from a child element -->\n<div v-on:click.self=\"doThat\">...</div>\n\n<!-- the click event will be triggered at most once -->\n<a v-on:click.once=\"doThis\"></a>\n\n<!-- the scroll event's default behavior (scrolling) will happen -->\n<!-- immediately, instead of waiting for `onScroll` to complete  -->\n<!-- in case it contains `event.preventDefault()`                -->\n<div v-on:scroll.passive=\"onScroll\">...</div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Key Modifiers</h3><div><a href=\"https://vuejs.org/v2/guide/events.html#Key-Modifiers\" style=\"color: rgb(128, 187, 255);\">https://vuejs.org/v2/guide/events.html#Key-Modifiers</a>&nbsp;<div><br></div><div>When listening for keyboard events, we often need to check for common key codes. Vue also allows adding key modifiers for v-on when listening for key events:</div></div>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<!-- only call `vm.submit()` when the `keyCode` is 13 -->\n<input v-on:keyup.13=\"submit\">"
+    },
+    {
+      "type": "text",
+      "data": "Remembering all the keyCodes is a hassle, so Vue provides aliases for the most commonly used keys:"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<!-- same as above -->\n<input v-on:keyup.enter=\"submit\">\n\n<!-- also works for shorthand -->\n<input @keyup.enter=\"submit\">"
+    },
+    {
+      "type": "text",
+      "data": "Here’s the full list of key modifier aliases:<br><div><div><br></div><div></div><code>.enter</code></div><div><code>.tab</code></div><div><code>.delete (captures both “Delete” and “Backspace” keys)</code></div><div><code>.esc</code></div><div><code>.space</code></div><div><code>.up</code></div><div><code>.down</code></div><div><code>.left</code></div><div><code>.right</code><div></div></div>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

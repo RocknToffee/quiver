@@ -1,0 +1,49 @@
+{
+  "title": "Basics - Components",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<br>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": "Two Way Binding"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "@Component({\n  selector: 'app-test',\n  template: `\n          <input type=\"text\" class=\"form-control\" [(ngModel)]=\"serverName\">\n          <p>{{serverName}}</p>\n  `,\n})\nexport class TestComponent {\n  serverName: string ='';\n}"
+    },
+    {
+      "type": "text",
+      "data": "Click Event"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "@Component({\n  selector: 'click-me',\n  template: `\n    <button (click)=\"onClickMe()\">Click me!</button>\n    {{clickMessage}}`\n})\nexport class ClickMeComponent {\n  clickMessage = '';\n\n  onClickMe() {\n    this.clickMessage = 'You are my hero!';\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": "Add To list"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "@Component({\n  selector: 'little-tour',\n  template: `\n    <input #newHero\n      (keyup.enter)=\"addHero(newHero.value)\"\n      (blur)=\"addHero(newHero.value); newHero.value='' \">\n\n    <button (click)=\"addHero(newHero.value)\">Add</button>\n\n    <ul><li *ngFor=\"let hero of heroes\">{{hero}}</li></ul>\n  `\n})\nexport class LittleTourComponent {\n  heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];\n  addHero(newHero: string) {\n    if (newHero) {\n      this.heroes.push(newHero);\n    }\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": "Visibility Toggle<br>"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-list',\n  template: `\n\n    <button class=\"btn btn-primary\" (click)=\"onToggleDetails()\">Display Details</button>\n    <p *ngIf=\"showSecret\">Secret Password = tuna</p>\n`,\n\n})\nexport class ListComponent {\n  showSecret = false;\n\n  constructor() { }\n\n  onToggleDetails() {\n    this.showSecret = !this.showSecret;\n    \n  }\n  \n}"
+    }
+  ]
+}

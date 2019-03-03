@@ -1,0 +1,71 @@
+{
+  "title": "Gutenberg",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Gutneberg:&nbsp;<a href=\"https://wordpress.org/gutenberg/\">https://wordpress.org/gutenberg/</a><div>ACF for Gutneberg:&nbsp;<a href=\"https://www.advancedcustomfields.com/blog/acf-5-8-introducing-acf-blocks-for-gutenberg/\">https://www.advancedcustomfields.com/blog/acf-5-8-introducing-acf-blocks-for-gutenberg/</a></div><div><br></div><div><b>Functions.php</b></div>"
+    },
+    {
+      "type": "text",
+      "data": "-Activate Alignment Classes<br>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "//Activate wide align in guttenberg\nadd_theme_support('align-wide');"
+    },
+    {
+      "type": "text",
+      "data": "-Add Styles to Editor"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "//Editor Stylesheet\nadd_editor_style('assets/dist/app.css');"
+    },
+    {
+      "type": "text",
+      "data": "-Register block"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "function wds_register_acf_gutenberg_blocks() {\n    if ( function_exists( 'acf_register_block' ) ) {\n        // Register the hero block.\n        acf_register_block(array(\n            'name'            => 'hero',\n            'title'           => __( 'Hero', 'wds' ),\n            'description'     => __( 'A hero block.', 'wds' ),\n            'render_callback' => 'my_acf_block_render_callback',\n            'category'        => 'layout',\n            'icon'            => 'slides',\n            'mode'            => 'preview',\n            'keywords'        => array( 'hero', 'slider' ),\n        ));\n    }\n}\nadd_action( 'acf/init', 'wds_register_acf_gutenberg_blocks' );"
+    },
+    {
+      "type": "text",
+      "data": "-Load block"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "function my_acf_block_render_callback($block)\n{\n    // convert name (\"acf/testimonial\") into path friendly slug (\"testimonial\")\n    $slug = str_replace('acf/', '', $block['name']);\n\n    // include a template part from within the \"template-parts/block\" folder\n    if (file_exists(get_theme_file_path(\"/template-parts/acf/content-{$slug}.php\"))) {\n        include(get_theme_file_path(\"/template-parts/acf/content-{$slug}.php\"));\n    }\n}"
+    },
+    {
+      "type": "text",
+      "data": "<b>Hero.php</b><div>-Template code</div>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "<?php // Set up fields.\n$title = get_field('title');\n$text = get_field('text');\n$button_url = get_field('button_url');\n$button_text = get_field('button_text');\n$background_image = get_field('background_image');\n\n// create id attribute for specific styling\n$id = 'hero-' . $block['id'];\n\n// create align class (\"alignwide\") from block setting (\"wide\")\n$align_class = $block['align'] ? 'align' . $block['align'] : '';\n\n?>\n<section class=\"hero-block <?php echo $align_class; ?>\"\n         id=\" <?php echo $id; ?>\">\n    <div class=\"hero-content\">\n        <?php if ($title) : ?>\n            <h2 class=\"hero-title\"><?php echo esc_html($title); ?></h2>\n        <?php endif; ?>\n\n        <?php if ($text) : ?>\n            <p class=\"hero-description\"><?php echo esc_html($text); ?></p>\n        <?php endif; ?>\n\n        <?php if ($button_text && $button_url) : ?>\n            <a class=\"button button-hero\"\n               href=\"<?php echo esc_url($button_url); ?>\"><?php echo esc_html($button_text); ?></a>\n        <?php endif; ?>\n    </div><!-- .hero-content-->\n    <?php if ($background_image) : ?>\n        <figure class=\"image-background\" aria-hidden=\"true\">\n            <?php echo wp_get_attachment_image($background_image['id'], 'full'); ?>\n        </figure><!-- .image-background -->\n    <?php endif ?>\n</section><!-- .hero -->"
+    },
+    {
+      "type": "text",
+      "data": "<b>ACF Fields</b><div>- Register Fields</div><div><img src=\"quiver-image-url/746E6855E6FBAAE0CC37A0F4AB5DC5A2.png\" alt=\"acf-blocks-field-group.png\" width=\"1718\" height=\"746\"><br></div><div><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<b>Style.css</b><div>- styling for alignment</div>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "/* !Block styles */\n.entry .entry-content{\n  display: grid;\n  grid-template-columns: [full-start] minmax(calc(calc(100% - 1008px) / 2), 1fr) [main-start] repeat(12,\n          [col-start] 1fr) [main-end] minmax(calc(calc(100% - 1008px) / 2), 1fr) [full-end];\n  align-items: stretch;\n}\n.entry .entry-content > *,\n.entry .entry-summary > * {\n  margin: 32px 0 0 0;\n  grid-column-start: 3;\n  grid-column-end: 13;\n}\n\n.entry .entry-content > *:first-child,\n.entry .entry-summary > *:first-child {\n  margin-top: 0;\n}\n\n.entry .entry-content > * > *:last-child,\n.entry .entry-summary > * > *:last-child {\n  margin-bottom: 0;\n}\n\n.entry .entry-content > *.alignwide,\n.entry .entry-summary > *.alignwide {\n  grid-column-start: 2;\n  grid-column-end: 14;\n}\n\n.entry .entry-content > *.alignfull,\n.entry .entry-summary > *.alignfull {\n  grid-column-start: 1;\n  grid-column-end: 15;\n}"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

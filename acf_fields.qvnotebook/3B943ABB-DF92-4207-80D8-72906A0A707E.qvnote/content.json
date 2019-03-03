@@ -1,0 +1,10 @@
+{
+  "title": "General Display Parameters",
+  "cells": [
+    {
+      "type": "code",
+      "language": "php",
+      "data": "        'menu_order' => 0,\n        'position' => 'acf_after_title',\n        'style' => 'default',\n        'label_placement' => 'top',\n        'instruction_placement' => 'label',\n        'hide_on_screen' => '',\n        'active' => 1,\n        'description' => '',"
+    }
+  ]
+}

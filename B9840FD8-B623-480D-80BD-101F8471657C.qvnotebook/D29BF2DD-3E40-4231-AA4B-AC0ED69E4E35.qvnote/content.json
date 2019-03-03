@@ -1,0 +1,41 @@
+{
+  "title": "ACF Fields Location Rules",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>Add Group</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "if( function_exists('acf_add_local_field_group') ):\n\n    acf_add_local_field_group(array (\n        'key' => 'group',\n        'title' => 'Group',\n        \n        'fields' => array (/*FIELDS GO HERE*/),\n        \n        'location' => array (/*LOCATION RULES GO HERE*/),\n        \n        'hide_on_screen' => array(\n            'the_content'\n        ),\n        \n        'menu_order' => 0,\n        'position' => 'normal',\n        'style' => 'default',\n        'label_placement' => 'top',\n        'instruction_placement' => 'label',\n        'active' => 1,\n        'description' => '',\n\n    ));\n\nendif;"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Location</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "'location' => array(\n    //IS POST \n    array(\n        array(\n            'param' => 'post_type',\n            'operator' => '==',\n            'value' => 'post',\n        ),\n    ),\n    \n    // IS PAGE BUT NOT TEMPLATE\n    array(\n        array(\n            'param' => 'post_type',\n            'operator' => '==',\n            'value' => 'page',\n        ),\n        array(\n            'param' => 'page_template',\n            'operator' => '!=',\n            'value' => 'page-blah.php',\n        ),\n    ),\n    \n    //CUSTOM POST TYPE\n    array(\n        array(\n            'param' => 'post_type',\n            'operator' => '==',\n            'value' => 'custom',\n        ),\n    ),\n    //INDIVIDAL POST\n    array(\n        array(\n            'param' => 'post',\n            'operator' => '==',\n            'value' => '20',\n        ),\n    ),\n),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Hide on screen</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "'hide_on_screen' => array(\n    'the_content'\n),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Display Rules</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "'menu_order' => 0,\n'position' => 'acf_after_title',\n'style' => 'default',\n'label_placement' => 'top',\n'instruction_placement' => 'label',\n'active' => 1,\n'description' => '',"
+    }
+  ]
+}

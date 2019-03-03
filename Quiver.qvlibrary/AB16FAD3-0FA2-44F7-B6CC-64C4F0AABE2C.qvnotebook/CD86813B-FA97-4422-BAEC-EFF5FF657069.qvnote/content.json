@@ -1,0 +1,14 @@
+{
+  "title": "HTML",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Head Meta"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"HandheldFriendly\" content=\"True\">\n    <meta name=\"MobileOptimized\" content=\"320\">\n    <meta name=\"msapplication-TileColor\" content=\"#E9F0E0\">\n    <meta name=\"msapplication-TileImage\" content=\"/\">\n    <meta name=\"theme-color\" content=\"#E9F0E0\">\n    <meta name=\"description\" content=\"/\">\n    <meta name=\"keywords\" content=\"/\">\n    <link rel=\"icon\" href=\"/\">\n    <meta property=”og:title” content=”/” />\n    <meta property=”og:url” content=”/” />\n    <meta property=”og:type” content=”website” />\n    <meta property=”og:image” content=”/” />"
+    }
+  ]
+}

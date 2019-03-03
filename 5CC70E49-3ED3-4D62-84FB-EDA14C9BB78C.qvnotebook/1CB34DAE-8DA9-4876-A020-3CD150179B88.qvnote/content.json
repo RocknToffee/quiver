@@ -1,0 +1,14 @@
+{
+  "title": "25% Grid",
+  "cells": [
+    {
+      "type": "text",
+      "data": "This set of styles will display dynamic content in 25% width blocks with media quieries that should be adjusted inline with the min-width and wrapper width"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ".twenty_five {\n  //adjust in line with margins\n  width: 23.5%;\n  //adjust to fit needs then set media queries below\n  min-width: 150px;\n  margin-bottom: 1%;\n  box-sizing: initial;\n  display: inline-block;\n  vertical-align: top;\n  img {\n    max-width: 100%;\n  }\n  &:nth-child(4n+1) {\n    margin-right: 1%;\n  }\n  &:nth-child(4n+2) {\n    margin-left: 1%;\n    margin-right: 1%;\n  }\n  &:nth-child(4n+3) {\n    margin-left: 1%;\n    margin-right: 1%;\n  }\n  &:nth-child(4n+4) {\n    margin-left: 1%;\n  }\n  @media only screen and (max-width: 664px) {\n    width: 48%;\n    margin-bottom: 4%;\n\n    &:nth-child(4n+1) {\n      margin-right: 1%;\n      margin-left: 0%;\n    }\n    &:nth-child(4n+2) {\n      margin-right: 0%;\n      margin-left: 1%;\n    }\n    &:nth-child(4n+3) {\n      margin-right: 1%;\n      margin-left: 0%;\n    }\n    &:nth-child(4n+4) {\n      margin-right: 0%;\n      margin-left: 1%;\n    }\n  }\n  @media only screen and (max-width: 400px) {\n    width: 100%;\n    &:nth-child(4n+1) {\n      margin-right: 0%;\n      margin-left: 0%;\n    }\n    &:nth-child(4n+2) {\n      margin-right: 0%;\n      margin-left: 0%;\n    }\n    &:nth-child(4n+3) {\n      margin-right: 0%;\n      margin-left: 0%;\n    }\n    &:nth-child(4n+4) {\n      margin-right: 0%;\n      margin-left: 0%;\n    }\n  }\n}"
+    }
+  ]
+}

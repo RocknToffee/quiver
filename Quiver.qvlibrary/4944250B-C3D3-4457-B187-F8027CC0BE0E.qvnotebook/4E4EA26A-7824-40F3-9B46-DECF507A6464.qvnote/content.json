@@ -1,0 +1,73 @@
+{
+  "title": "Plugins",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3><b>ACF&nbsp;</b></h3><div>Customise WordPress with powerful, professional and intuitive fields</div><div><a href=\"https://www.advancedcustomfields.com/my-account/\">https://www.advancedcustomfields.com/my-account/</a></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3><b>All-in-One WP Migration&nbsp;</b></h3><div>All-in-One WP Migration is the only tool that you will ever need to migrate a WordPress site.</div><div><a href=\"https://github.com/dachcom-digital/acf-yoast-seo-validation\" style=\"color: rgb(255, 255, 255);\">https://github.com/dachcom-digital/acf-yoast-seo-validation</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3><b style=\"color: rgb(221, 221, 221);\">Yoast &amp; ACF</b></h3><div>Add Yoast SEO Validation to your ACF Fields.</div><div><a href=\"https://github.com/dachcom-digital/acf-yoast-seo-validation\" style=\"color: rgb(255, 255, 255);\">https://github.com/dachcom-digital/acf-yoast-seo-validation</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3><b>Template Debugger</b></h3><div>Intended for Developers: This template debugger helps you identify what template files are being used on the page you're viewing.</div><div><b style=\"color: rgb(221, 221, 221);\">&nbsp;</b><a href=\"https://wordpress.org/plugins/quick-edit-template-link/\" style=\"color: rgb(255, 255, 255);\">https://wordpress.org/plugins/quick-edit-template-link/</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3><b>wp-manual-image-crop</b></h3><div>Plugin allows you to manually crop all the image sizes registered in your WordPress theme (in particular featured image).</div><div><a href=\"https://github.com/tomaszsita/wp-manual-image-crop\" style=\"color: rgb(255, 255, 255);\">https://github.com/tomaszsita/wp-manual-image-crop</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3><b>CPT-onomies&nbsp;</b></h3><div><span style=\"color: rgb(221, 221, 221);\">Use your custom post types as taxonomies. Create powerful relationships between your posts and, therefore, powerful content.</span></div><div><a href=\"https://github.com/bamadesigner/cpt-onomies\" style=\"color: rgb(255, 255, 255);\">https://github.com/bamadesigner/cpt-onomies</a><span style=\"color: rgb(221, 221, 221);\"><br></span></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3><b>Contact Form 7</b><span style=\"color: rgb(221, 221, 221);\">&nbsp;</span></h3><div><span style=\"color: rgb(221, 221, 221);\">Just another contact form plugin. Simple but flexible.</span></div><div><span style=\"color: rgb(221, 221, 221);\">&nbsp;</span><a href=\"https://wordpress.org/plugins/contact-form-7/\" style=\"color: rgb(255, 255, 255);\">https://wordpress.org/plugins/contact-form-7/</a><b style=\"color: rgb(221, 221, 221);\">&nbsp;</b><span style=\"color: rgb(221, 221, 221);\"><br></span></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3><b>Fluid Video Embeds</b></h3><div><span style=\"color: rgb(221, 221, 221);\">Make your \"auto embedded\" YouTube and Vimeo videos full width (100%) while maintaining their original aspect ratio</span></div><div><a href=\"https://wordpress.org/plugins/fluid-video-embeds/\" style=\"color: rgb(255, 255, 255);\">https://wordpress.org/plugins/fluid-video-embeds/</a><span style=\"color: rgb(221, 221, 221);\"><br></span></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Yoast SEO</h3><div>Improve your WordPress SEO: Write better content and have a fully optimised WordPress site using Yoast SEO plugin.<br></div><div><a href=\"https://en-gb.wordpress.org/plugins/wordpress-seo/\">https://en-gb.wordpress.org/plugins/wordpress-seo/</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>W3 Total Cache</h3><div>Easy Web Performance Optimization (WPO) using caching: browser, page, object, database, minify and content delivery network support.<br></div><div><a href=\"https://en-gb.wordpress.org/plugins/w3-total-cache/\">https://en-gb.wordpress.org/plugins/w3-total-cache/</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Post Types Order</h3><div>Post Order and custom Post Type Objects (posts, any custom post types) using a Drag and Drop Sortable JavaScript AJAX interface<br></div><div><a href=\"https://en-gb.wordpress.org/plugins/post-types-order/\">https://en-gb.wordpress.org/plugins/post-types-order/</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>WP Help</h3><div>Site operators can create detailed, hierarchical documentation for the site's authors, editors, and contributors, viewable in the WordPress admin<br></div><div><a href=\"https://wordpress.org/plugins/wp-help/\">https://wordpress.org/plugins/wp-help/</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Simple Share Buttons Adder</h3><div>A simple plugin that enables you to add share buttons to all of your posts and/or pages.<br></div><div><a href=\"https://en-gb.wordpress.org/plugins/simple-share-buttons-adder/\">https://en-gb.wordpress.org/plugins/simple-share-buttons-adder/</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3><b>BU Section Editing</b></h3><div>Advanced content editing workflow in WordPress through the use of section editing groups and permissions.<b><br></b></div><div><a href=\"https://en-gb.wordpress.org/plugins/bu-section-editing/\">https://en-gb.wordpress.org/plugins/bu-section-editing/</a></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>BU Navigation</h3><div>Robust tools for managing hierarchical page content in WordPress. Ideal for blogs with large page counts.<br></div><div><a href=\"https://wordpress.org/plugins/bu-navigation/\">https://wordpress.org/plugins/bu-navigation/</a></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Duplicate Post</h3><div>Clone posts and pages.<br></div><div><a href=\"https://wordpress.org/plugins/duplicate-post/\">https://wordpress.org/plugins/duplicate-post/</a></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>TinyMCE Advanced</h3><div>Enables the advanced features of TinyMCE, the WordPress WYSIWYG editor.<br></div><div><a href=\"https://wordpress.org/plugins/tinymce-advanced/\">https://wordpress.org/plugins/tinymce-advanced/</a><br></div>"
+    }
+  ]
+}

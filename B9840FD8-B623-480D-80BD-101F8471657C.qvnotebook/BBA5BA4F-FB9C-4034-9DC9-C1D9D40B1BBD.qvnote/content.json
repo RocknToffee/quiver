@@ -1,0 +1,36 @@
+{
+  "title": "PHP Snippets",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Remove p tags around images"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "function filter_ptags_on_images($content){\n   return preg_replace('/<p>\\s*(<a .*>)?\\s*(<img .* \\/>)\\s*(<\\/a>)?\\s*<\\/p>/iU', '\\1\\2\\3', $content);\n}\nadd_filter('the_content', 'filter_ptags_on_images');"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": "Taxonomy URL Rewriter"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "// Register Programmes\nfunction programmes_post_type() {\n​\n\t$labels = array(\n\t\t'name'                => _x( 'Programme', 'Post Type General Name', 'text_domain' ),\n\t\t'singular_name'       => _x( 'Programme', 'Post Type Singular Name', 'text_domain' ),\n\t\t'menu_name'           => __( 'Programme', 'text_domain' ),\n\t\t'parent_item_colon'   => __( 'Parent Item:', 'text_domain' ),\n\t\t'all_items'           => __( 'All Programmes', 'text_domain' ),\n\t\t'view_item'           => __( 'View Programme', 'text_domain' ),\n\t\t'add_new_item'        => __( 'Add New Programme', 'text_domain' ),\n\t\t'add_new'             => __( 'Add New', 'text_domain' ),\n\t\t'edit_item'           => __( 'Edit Programme', 'text_domain' ),\n\t\t'update_item'         => __( 'Update Programme', 'text_domain' ),\n\t\t'search_items'        => __( 'Search Programme', 'text_domain' ),\n\t\t'not_found'           => __( 'Not found', 'text_domain' ),\n\t\t'not_found_in_trash'  => __( 'Not found in Trash', 'text_domain' ),\n\t);\n\t$args = array(\n\t\t'label'               => __( 'Programme', 'text_domain' ),\n\t\t'description'         => __( 'Programme', 'text_domain' ),\n\t\t'labels'              => $labels,\n\t\t'supports'            => array( 'title', 'thumbnail' ),\n\t\t'taxonomies'          => array(''),\n\t\t'hierarchical'        => true,\n\t\t'public'              => true,\n\t\t'show_ui'             => true,\n\t\t'show_in_menu'        => true,\n\t\t'show_in_nav_menus'   => true,\n\t\t'show_in_admin_bar'   => true,\n\t\t'menu_position'       => 3,\n\t\t'can_export'          => true,\n\t\t'has_archive'         => true,\n\t\t'exclude_from_search' => false,\n\t\t'publicly_queryable'  => true,\n\t\t'query_var'           => true,\n\t\t'rewrite' \t\t\t  => array(\n\t\t\t'slug' => 'property/%events%'\n\t\t),\n\t\t'capability_type' => 'post',\n\t);\n\tregister_post_type( 'programmes', $args );\n\tflush_rewrite_rules( false );\n}\n​\nadd_filter('post_type_link', 'events_permalink_structure', 10, 4);\nfunction events_permalink_structure($post_link, $post)\n{\n\tif ( false !== strpos( $post_link, '%events%' ) ) {\n\t\t$event_type_term = get_the_terms( $post->ID, 'events' );\n\t\t$post_link = str_replace( '%events%', array_pop( $event_type_term )->slug, $post_link );\n\t}\n\treturn $post_link;\n}"
+    },
+    {
+      "type": "text",
+      "data": "White Space"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "<?php function removeWhitespace($buffer)\n{\n return preg_replace('~>\\s*\\n\\s*<~', '><', $buffer);\n}\nob_start('removeWhitespace');\n\n?>\n\n<?\nob_end_flush();\n?>"
+    }
+  ]
+}

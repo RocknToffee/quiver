@@ -1,0 +1,104 @@
+{
+  "title": "WordPress",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Custom Post Type Basic loop"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "<?php $args = array(\n    'posts_per_page' => '-1',\n    'post_type' => 'showcases',\n);\n$custom_post = new WP_Query( $args );\n\nwhile ($custom_post ->have_posts() ) : $custom_post->the_post();?>\n        <a href=\"<?php the_permalink(); ?>\"><?php the_title(); ?></a>\n<?php\nendwhile;\nwp_reset_postdata();\n\n?>"
+    },
+    {
+      "type": "text",
+      "data": "Custom Post Type Loop with Category taxonomy"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "<?php $args = array(\n                    'posts_per_page' => '-1',\n                    'post_type' => 'showcases',\n                    'tax_query' => array(\n                        array(\n                            'taxonomy' => 'category',\n                            'field' => 'slug',\n                            'terms' => 'design/digital'\n                        )\n                    )\n                );\n                $custom_post = new WP_Query( $args );\n\n                while ($custom_post ->have_posts() ) : $custom_post->the_post();?>\n                        <a href=\"<?php the_permalink(); ?>\"><?php the_title(); ?></a>\n                <?php\n                endwhile;\n                wp_reset_postdata();\n\n                ?>"
+    },
+    {
+      "type": "text",
+      "data": "Add category name to body class"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "add_filter('body_class','add_category_to_single');\n\nfunction add_category_to_single($classes) {\n    if (!is_admin() && is_single() ) {\n        global $post;\n        foreach((get_the_category($post->ID)) as $category) {\n            // add category slug to the $classes array\n            $classes[] = $category->category_nicename;\n        }\n    }\n    // return the $classes array\n    return $classes;\n}"
+    },
+    {
+      "type": "text",
+      "data": "Newest &amp; published"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "$args = array(\n    'posts_per_page' => '-1',\n    'post_type' => 'post',\n    'order_by' => 'post_date',\n    'order' => 'ASC',\n    'post_status' => 'publish'\n);"
+    },
+    {
+      "type": "text",
+      "data": "add link &amp; anchor to WYSIWYG"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "function set_tinymce_buttons( $initArray ) {\n$initArray['theme_advanced_buttons1'] ='formatselect,|,bold,italic,underline,|,bullist,numlist,charmap,|,pastetext,pasteword,|,removeformat,|,anchor,link,unlink,|,undo,redo';\n$initArray['theme_advanced_buttons2'] = '';\n$initArray['theme_advanced_blockformats'] = 'h2,h3,h4,p';\nreturn $initArray;\n}\nadd_filter('tiny_mce_before_init', 'set_tinymce_buttons');\n"
+    },
+    {
+      "type": "text",
+      "data": "Add custom style drop down to editor"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "\n/*\n * Callback function to filter the MCE settings\n */\n\n// Callback function to insert 'styleselect' into the $buttons array\nfunction my_mce_buttons_2($buttons) {\n    array_unshift($buttons, 'styleselect');\n    return $buttons;\n}\n\n// Register our callback to the appropriate filter\nadd_filter('mce_buttons_2', 'my_mce_buttons_2');\n\nfunction my_mce_before_init_insert_formats($init_array) {\n// Define the style_formats array\n    $style_formats = array(\n        // Each array child is a format with it's own settings\n        array(\n            'title' => 'Button',\n            'block' => 'span',\n            'classes' => 'secondary_cta',\n            'wrapper' => true,\n        ),\n    );\n    // Insert the array, JSON ENCODED, into 'style_formats'\n    $init_array['style_formats'] = json_encode($style_formats);\n    return $init_array;\n}\n\n// Attach callback to 'tiny_mce_before_init'\nadd_filter('tiny_mce_before_init', 'my_mce_before_init_insert_formats');"
+    },
+    {
+      "type": "text",
+      "data": "Custom Colour Swatches"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "function my_mce4_options($init) {\n  $default_colours = '\"000000\", \"Black\",\n                      \"993300\", \"Burnt orange\",\n                      \"333300\", \"Dark olive\",\n                      \"003300\", \"Dark green\",\n                      \"003366\", \"Dark azure\",\n                      \"000080\", \"Navy Blue\",\n                      \"333399\", \"Indigo\",\n                      \"333333\", \"Very dark gray\",\n                      \"800000\", \"Maroon\",\n                      \"FF6600\", \"Orange\",\n                      \"808000\", \"Olive\",\n                      \"008000\", \"Green\",\n                      \"008080\", \"Teal\",\n                      \"0000FF\", \"Blue\",\n                      \"666699\", \"Grayish blue\",\n                      \"808080\", \"Gray\",\n                      \"FF0000\", \"Red\",\n                      \"FF9900\", \"Amber\",\n                      \"99CC00\", \"Yellow green\",\n                      \"339966\", \"Sea green\",\n                      \"33CCCC\", \"Turquoise\",\n                      \"3366FF\", \"Royal blue\",\n                      \"800080\", \"Purple\",\n                      \"999999\", \"Medium gray\",\n                      \"FF00FF\", \"Magenta\",\n                      \"FFCC00\", \"Gold\",\n                      \"FFFF00\", \"Yellow\",\n                      \"00FF00\", \"Lime\",\n                      \"00FFFF\", \"Aqua\",\n                      \"00CCFF\", \"Sky blue\",\n                      \"993366\", \"Red violet\",\n                      \"FFFFFF\", \"White\",\n                      \"FF99CC\", \"Pink\",\n                      \"FFCC99\", \"Peach\",\n                      \"FFFF99\", \"Light yellow\",\n                      \"CCFFCC\", \"Pale green\",\n                      \"CCFFFF\", \"Pale cyan\",\n                      \"99CCFF\", \"Light sky blue\",\n                      \"CC99FF\", \"Plum\"';\n\n  $custom_colours =  '\"E14D43\", \"Color 1 Name\",\n                      \"D83131\", \"Color 2 Name\",\n                      \"ED1C24\", \"Color 3 Name\",\n                      \"F99B1C\", \"Color 4 Name\",\n                      \"50B848\", \"Color 5 Name\",\n                      \"00A859\", \"Color 6 Name\",\n                      \"00AAE7\", \"Color 7 Name\",\n                      \"282828\", \"Color 8 Name\"';\n\n  // build colour grid default+custom colors\n  $init['textcolor_map'] = '['.$default_colours.','.$custom_colours.']';\n\n  // enable 6th row for custom colours in grid\n  $init['textcolor_rows'] = 6;\n\n  return $init;\n}\nadd_filter('tiny_mce_before_init', 'my_mce4_options');"
+    },
+    {
+      "type": "text",
+      "data": "Custom WYSUGYG Toolbar"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "//REGISTER REDUCED TOOLBAR FOR WYSIWYG\nadd_filter( 'acf/fields/wysiwyg/toolbars' , 'my_toolbars'  );\nfunction my_toolbars( $toolbars )\n{\n    // Uncomment to view format of $toolbars\n    /*\n    echo '< pre >';\n        print_r($toolbars);\n    echo '< /pre >';\n    die;\n    */\n\n    // Add a new toolbar called \"Very Simple\"\n    // - this toolbar has only 1 row of buttons\n    $toolbars['Very Simple' ] = array();\n    $toolbars['Very Simple' ][1] = array('bold' , 'italic' , 'underline' );\n\n    // Edit the \"Full\" toolbar and remove 'code'\n    // - delet from array code from http://stackoverflow.com/questions/7225070/php-array-delete-by-value-not-key\n    if( ($key = array_search('code' , $toolbars['Full' ][2])) !== false )\n    {\n        unset( $toolbars['Full' ][2][$key] );\n    }\n\n    // remove the 'Basic' toolbar completely\n    unset( $toolbars['Basic' ] );\n\n    // return $toolbars - IMPORTANT!\n    return $toolbars;\n}"
+    },
+    {
+      "type": "text",
+      "data": "Auto Collapse"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "//CLOSE ALL ACF FIELDS ON LOAD\nfunction my_acf_admin_head() {\n    ?>\n    <script type=\"text/javascript\">\n        (function($){\n\n            $(document).ready(function(){\n\n                $( \".-collapse\" ).each(function( index ) {\n                    $( this ).click();\n                });\n\n            });\n\n        })(jQuery);\n    </script>\n    <?php\n}\nadd_action('acf/input/admin_head', 'my_acf_admin_head');"
+    },
+    {
+      "type": "text",
+      "data": "HIde Update message for non admins"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "// REMOVE THE WORDPRESS UPDATE NOTIFICATION FOR ALL USERS EXCEPT SYSADMIN\n       global $user_login;\n       get_currentuserinfo();\n       if (!current_user_can('update_plugins')) { // checks to see if current user can update plugins \n        add_action( 'init', create_function( '$a', \"remove_action( 'init', 'wp_version_check' );\" ), 2 );\n        add_filter( 'pre_option_update_core', create_function( '$a', \"return null;\" ) );\n       }"
+    },
+    {
+      "type": "text",
+      "data": "Stop Users deleting"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "$role = get_role('administrator');\n$role->remove_cap('delete_pages');\n$role->remove_cap('delete_others_pages');\n$role->remove_cap('delete_published_pages');"
+    }
+  ]
+}

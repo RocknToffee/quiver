@@ -1,0 +1,10 @@
+{
+  "title": "Finding ancestors and parents for specific styling ( used on Live to Tri for dual heads",
+  "cells": [
+    {
+      "type": "code",
+      "language": "php",
+      "data": "// Is page a parent, child or any ancestor of the page\nfunction is_tree($pid)\n{\n global $post;\n $ancestors = get_post_ancestors($post->$pid);\n $root = count($ancestors) - 1;\n $parent = $ancestors[$root];\n if(is_page() && (is_page($pid) || $post->post_parent == $pid || in_array($pid, $ancestors)))\n {\n return true;\n }\n else\n {\n return false;\n }\n};\n// Usage\nif (is_tree(2)) {\n // stuff\n}"
+    }
+  ]
+}

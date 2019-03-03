@@ -1,0 +1,24 @@
+{
+  "title": "Sliding Div",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Infro"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div class=\"inner_detail show_hide\">\n    <h1>Visible</h1>\n    <div class=\"slidingDiv\">\n        <p>Hidden</p>\n    </div>\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(document).ready(function(){\n\n    $(\".slidingDiv\").hide();\n\n    $('.show_hide').on(\"click\",function(){\n        $(this).children('.slidingDiv').slideToggle();\n    });\n});"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": ".slidingDiv {\n  height:auto;\n  padding:20px;\n  margin-top:10px;\n}\n.show_hide {\n  display:inline-block;\n}"
+    }
+  ]
+}

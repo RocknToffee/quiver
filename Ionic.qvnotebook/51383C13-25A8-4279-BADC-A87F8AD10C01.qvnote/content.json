@@ -1,0 +1,57 @@
+{
+  "title": "Basics",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h1 style=\"box-sizing: border-box; font-size: 48px; margin: 50px 0px 0px; font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 400; line-height: 64px; color: rgb(255, 255, 255); border: none; letter-spacing: -0.05em; text-shadow: rgba(0, 0, 0, 0.0666667) 0px 1px 2px; cursor: default; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);\">The top open source framework for building amazing mobile apps.</h1><h3 style=\"box-sizing: border-box; font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 500; line-height: 1.6; color: rgb(216, 232, 255); margin: 20px 0px 32px; font-size: 18px; cursor: default; letter-spacing: -0.02em; max-width: 500px; text-shadow: rgba(0, 0, 0, 0.0666667) 0px 1px 2px; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);\">Ionic is the beautiful, free and open source mobile SDK for developing native and progressive web apps with ease.</h3><div><a href=\"https://ionicframework.com/\">https://ionicframework.com/</a><br></div><div><a href=\"https://ionicframework.com/docs/intro/installation/\">https://ionicframework.com/docs/intro/installation/</a></div><div><a href=\"https://medium.com/@eriktufvesson/ionic-2-generating-new-pages-using-the-ionic-cli-8e29a3161668\">https://medium.com/@eriktufvesson/ionic-2-generating-new-pages-using-the-ionic-cli-8e29a3161668</a><br></div>"
+    },
+    {
+      "type": "text",
+      "data": "Getting Started"
+    },
+    {
+      "type": "text",
+      "data": "GLOBAL INSTALL IONIC &amp; CORDOVA"
+    },
+    {
+      "type": "code",
+      "language": "tex",
+      "data": "$ npm install -g ionic "
+    },
+    {
+      "type": "text",
+      "data": "INSTALL A INSTANCE"
+    },
+    {
+      "type": "code",
+      "language": "tex",
+      "data": "$ ionic start cutePuppyPics"
+    },
+    {
+      "type": "text",
+      "data": "SERVE APP"
+    },
+    {
+      "type": "code",
+      "language": "tex",
+      "data": "$ cd cutePuppyPics\n$ ionic "
+    },
+    {
+      "type": "text",
+      "data": "ADD PAGE"
+    },
+    {
+      "type": "code",
+      "language": "tex",
+      "data": "$ ionic generate page MyNewPage"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": "NavOptions<div><p style=\"box-sizing: border-box; margin: 1.2em 0px 1.6em; color: rgb(76, 85, 90); line-height: 2.1em; font-size: 15px; font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, sans-serif; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);\">Some methods on&nbsp;<code style=\"box-sizing: border-box; font-family: &quot;Source Code Pro&quot;, Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13.5px; padding: 2px 4px; color: rgb(77, 140, 244); background-color: whitesmoke; border-radius: 4px;\">NavController</code>&nbsp;allow for customizing the current transition. To do this, we can pass an object with the modified properites.</p><table style=\"box-sizing: border-box; background-color: rgb(255, 255, 255); width: 1130px; max-width: 100%; margin-bottom: 20px; color: rgb(51, 51, 51); font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, sans-serif; font-size: 14px; font-variant-ligatures: normal; orphans: 2; widows: 2;\"><thead style=\"box-sizing: border-box;\"><tr style=\"box-sizing: border-box;\"><th style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: bottom; border-top-width: 0px; border-bottom-width: 2px; white-space: nowrap;\">Property</th><th style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: bottom; border-top-width: 0px; border-bottom-width: 2px; white-space: nowrap;\">Value</th><th style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: bottom; border-top-width: 0px; border-bottom-width: 2px; width: 973px;\">Description</th></tr></thead><tbody style=\"box-sizing: border-box;\"><tr style=\"box-sizing: border-box;\"><td style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; white-space: nowrap;\">animate</td><td style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; white-space: nowrap;\"><code style=\"box-sizing: border-box; font-family: &quot;Source Code Pro&quot;, Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(77, 140, 244); background-color: whitesmoke; border-radius: 4px;\">boolean</code></td><td style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; width: 973px;\">Whether or not the transition should animate.</td></tr><tr style=\"box-sizing: border-box;\"><td style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; white-space: nowrap;\">animation</td><td style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; white-space: nowrap;\"><code style=\"box-sizing: border-box; font-family: &quot;Source Code Pro&quot;, Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(77, 140, 244); background-color: whitesmoke; border-radius: 4px;\">string</code></td><td style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; width: 973px;\">What kind of animation should be used.</td></tr><tr style=\"box-sizing: border-box;\"><td style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; white-space: nowrap;\">direction</td><td style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; white-space: nowrap;\"><code style=\"box-sizing: border-box; font-family: &quot;Source Code Pro&quot;, Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(77, 140, 244); background-color: whitesmoke; border-radius: 4px;\">string</code></td><td style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; width: 973px;\">The conceptual direction the user is navigating. For example, is the user navigating&nbsp;<code style=\"box-sizing: border-box; font-family: &quot;Source Code Pro&quot;, Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(77, 140, 244); background-color: whitesmoke; border-radius: 4px;\">forward</code>, or&nbsp;<code style=\"box-sizing: border-box; font-family: &quot;Source Code Pro&quot;, Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(77, 140, 244); background-color: whitesmoke; border-radius: 4px;\">back</code>?</td></tr><tr style=\"box-sizing: border-box;\"><td style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; white-space: nowrap;\">duration</td><td style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; white-space: nowrap;\"><code style=\"box-sizing: border-box; font-family: &quot;Source Code Pro&quot;, Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(77, 140, 244); background-color: whitesmoke; border-radius: 4px;\">number</code></td><td style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; width: 973px;\">The length in milliseconds the animation should take.</td></tr><tr style=\"box-sizing: border-box;\"><td style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; white-space: nowrap;\">easing</td><td style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; white-space: nowrap;\"><code style=\"box-sizing: border-box; font-family: &quot;Source Code Pro&quot;, Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 12.6px; padding: 2px 4px; color: rgb(77, 140, 244); background-color: whitesmoke; border-radius: 4px;\">string</code></td><td style=\"box-sizing: border-box; padding: 8px; line-height: 1.42857; vertical-align: top; width: 973px;\">The easing for the animation.</td></tr></tbody></table><p style=\"box-sizing: border-box; margin: 1.2em 0px 1.6em; color: rgb(76, 85, 90); line-height: 2.1em; font-size: 15px; font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, sans-serif; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);\">The property 'animation' understands the following values:&nbsp;<code style=\"box-sizing: border-box; font-family: &quot;Source Code Pro&quot;, Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13.5px; padding: 2px 4px; color: rgb(77, 140, 244); background-color: whitesmoke; border-radius: 4px;\">md-transition</code>,&nbsp;<code style=\"box-sizing: border-box; font-family: &quot;Source Code Pro&quot;, Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13.5px; padding: 2px 4px; color: rgb(77, 140, 244); background-color: whitesmoke; border-radius: 4px;\">ios-transition</code>&nbsp;and&nbsp;<code style=\"box-sizing: border-box; font-family: &quot;Source Code Pro&quot;, Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace; font-size: 13.5px; padding: 2px 4px; color: rgb(77, 140, 244); background-color: whitesmoke; border-radius: 4px;\">wp-transition</code>.</p></div>"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "title": "Basic",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div>Find</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('li')"
+    },
+    {
+      "type": "text",
+      "data": "Find &amp; Do&nbsp;<a href=\"https://jsfiddle.net/george_hawthorne/uhL5Loyo/\">https://jsfiddle.net/george_hawthorne/uhL5Loyo/</a>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('li').addClass('complete')"
+    },
+    {
+      "type": "text",
+      "data": "Check if page is ready for use"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(document).ready(function (){\n  //Your script here\n});"
+    },
+    {
+      "type": "text",
+      "data": "- Short form"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(function (){\n  //Your script here\n});"
+    },
+    {
+      "type": "text",
+      "data": "Chaning&nbsp;<a href=\"https://jsfiddle.net/george_hawthorne/aznovnmq/\">https://jsfiddle.net/george_hawthorne/aznovnmq/</a>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('li')\n  .hide()\n  .delay(500)\n  .fadeIn(1400);"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "<script>\n    {#(function ($) {\n\n\n    )(jQuery);\n\n\n</script>\n"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

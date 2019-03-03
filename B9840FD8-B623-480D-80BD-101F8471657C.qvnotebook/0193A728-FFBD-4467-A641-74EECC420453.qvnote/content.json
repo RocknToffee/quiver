@@ -1,0 +1,194 @@
+{
+  "title": "ACF Fields",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>Message</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "  array(\n      'key' => 'field_message',\n      'label' => 'Message',\n      'name' => 'message',\n      'type' => 'message',\n      'instructions' => '',\n      'required' => 0,\n      'conditional_logic' => 0,\n      'wrapper' => array(\n          'width' => '',\n          'class' => '',\n          'id' => '',\n      ),\n      'default_value' => '',\n      'placeholder' => '',\n      'prepend' => '',\n      'append' => '',\n      'maxlength' => '',\n      'readonly' => 0,\n      'disabled' => 0,\n      'display' => 'block',\n  ),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Tab</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "  array(\n      'key' => 'field_tab',\n      'label' => 'Tab',\n      'name' => '',\n      'type' => 'tab',\n      'instructions' => '',\n      'required' => 0,\n      'conditional_logic' => 0,\n      'wrapper' => array(\n          'width' => '',\n          'class' => '',\n          'id' => '',\n      ),\n      'placement' => 'left',\n      'endpoint' => 0,\n  ),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Text</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "  array(\n      'key' => 'field_text',\n      'label' => 'Text',\n      'name' => 'Text',\n      'default_value' => 'Text',\n      'type' => 'text',\n      'toolbar' => 'full',\n      'instructions' => '',\n  ),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Text WYSIWYG</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "   array(\n        'key' => 'field_text_full',\n        'label' => 'Text Editor',\n        'name' => 'text_editor',\n        'type' => 'wysiwyg',\n        'instructions' => '',\n        'required' => 0,\n        'conditional_logic' => 0,\n        'wrapper' => array(\n            'width' => '',\n            'class' => '',\n            'id' => '',\n        ),\n        'default_value' => '',\n        'tabs' => 'all',\n        'toolbar' => 'full',\n        'media_upload' => 1,\n    ),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Image&nbsp;</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "array (\n\t\t'key' => 'field_583c53f8c7fb6',\n\t\t'label' => 'Build Up Image',\n\t\t'name' => 'build_up_image',\n\t\t'type' => 'image',\n\t\t'instructions' => '',\n\t\t'required' => '',\n\t\t'conditional_logic' => 0,\n\t\t'wrapper' => array (\n\t\t\t'width' => '',\n\t\t\t'class' => '',\n\t\t\t'id' => '',\n\t\t),\n\t\t'return_format' => 'object',\n\t\t'preview_size' => 'thumbnail',\n\t\t'library' => 'all',\n\t\t'min_width' => '',\n\t\t'min_height' => '',\n\t\t'min_size' => '',\n\t\t'max_width' => '',\n\t\t'max_height' => '',\n\t\t'max_size' => '',\n\t\t'mime_types' => '',\n\t),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Checkbox</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "  array(\n      'key' => 'field_checkbox',\n      'label' => '',\n      'name' => 'checkbox',\n      'type' => 'checkbox',\n      'choices' => array(\n          'true' => '<b>checkbox</b>'\n      ),\n      'default_value' => array (\n                    0 => 'true',\n                ),\n      'layout' => 'horizontal',\n      'toggle' => 0,  \n  ),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Repeater</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "array(\n    'key' => 'field_repeater',\n    'label' => 'Repeater',\n    'name' => 'repeater',\n    'type' => 'repeater',\n    'instructions' => '',\n    'required' => 0,\n    'conditional_logic' => 0,\n    'wrapper' => array(\n        'width' => '',\n        'class' => '',\n        'id' => '',\n    ),\n    'collapsed' => '',\n    'min' => '',\n    'max' => '',\n    'layout' => 'block',\n    'button_label' => 'Add Row',\n    'sub_fields' => array(/*FIELDS GO HERE*/),\n),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Flexible Content</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "array(\n    'key' => 'field_flexible',\n    'label' => 'Flexible',\n    'name' => 'flexible',\n    'type' => 'flexible_content',\n    'instructions' => '',\n    'required' => 0,\n    'conditional_logic' => 0,\n    'wrapper' => array(\n        'width' => '',\n        'class' => '',\n        'id' => '',\n    ),\n    'button_label' => 'Add Row',\n    'min' => '',\n    'max' => '',\n    'layouts' => array(\n        array(\n            'key' => 'flex_layout_one',\n            'name' => 'layout_one',\n            'label' => 'Layout One',\n            'display' => 'block',\n            'sub_fields' => array(/*FIELDS GO HERE*/),\n            'min' => '',\n            'max' => '',\n        ),\n        array(\n            'key' => 'flex_layout_two',\n            'name' => 'layout_two',\n            'label' => 'Layout Two',\n            'display' => 'block',\n            'sub_fields' => array(/*FIELDS GO HERE*/),\n            'min' => '',\n            'max' => '',\n        ),\n    ),\n),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Flexible Layout</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "  array(\n    'key' => 'flexible-layout',\n    'name' => 'flexible-layout',\n    'label' => 'Flexible Layout',\n    'display' => 'block',\n    'sub_fields' => array(\n        \n    ),\n    'min' => '',\n    'max' => '',\n  ),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Page Link</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "  array(\n      'key' => 'field_page_link',\n      'label' => 'Page Link',\n      'name' => 'page_link',\n      'type' => 'page_link',\n      'instructions' => '',\n      'required' => '',\n      'conditional_logic' => '',\n      'wrapper' => array(\n          'width' => '',\n          'class' => '',\n          'id' => '',\n      ),\n      'post_type' => array(),\n      'taxonomy' => array(),\n      'allow_null' => 0,\n      'multiple' => 0,\n  ),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Relationship</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "  array (\n      'key' => 'field_relationship',\n      'label' => 'Relationship',\n      'name' => 'relationship',\n      'type' => 'relationship',\n      'instructions' => '',\n      'required' => 0,\n      'conditional_logic' => 0,\n      'wrapper' => array (\n          'width' => '',\n          'class' => '',\n          'id' => '',\n      ),\n      'post_type' => array (\n          0 => 'page',\n          1 => 'post',\n\n      ),\n      'taxonomy' => array (\n      ),\n      'filters' => array (\n          0 => 'search',\n          1 => 'post_type',\n          2 => 'taxonomy',\n      ),\n      'elements' => array (\n          0 => 'featured_image',\n      ),\n      'min' => '0',\n      'max' => '4',\n      'return_format' => 'object',\n  ),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Gallery</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "  array(\n      'key' => 'field_gallery',\n      'label' => 'Gallery',\n      'name' => 'gallery',\n      'type' => 'gallery',\n      'instructions' => '',\n      'required' => 0,\n      'conditional_logic' => 0,\n      'wrapper' => array(\n          'width' => '',\n          'class' => '',\n          'id' => '',\n      ),\n      'min' => '',\n      'max' => '',\n      'preview_size' => 'thumbnail',\n      'insert' => 'append',\n      'library' => 'all',\n      'min_width' => '',\n      'min_height' => '',\n      'min_size' => '',\n      'max_width' => '',\n      'max_height' => '',\n      'max_size' => '',\n      'mime_types' => '',\n  ),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Radio</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "  array(\n      'key' => 'field_radio',\n      'label' => 'Radio',\n      'name' => 'radio',\n      'type' => 'radio',\n      'instructions' => '',\n      'required' => 0,\n      'conditional_logic' => 0,\n      'wrapper' => array(\n          'width' => '',\n          'class' => '',\n          'id' => '',\n      ),\n      'choices' => array(\n          'one' => 'Choice One',\n          'two' => 'Choice Two',\n      ),\n      'allow_null' => 0,\n      'other_choice' => 0,\n      'save_other_choice' => 0,\n      'default_value' => '',\n      'layout' => 'vertical',\n  ),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Video</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "   array(\n      'key' => 'field_video',\n      'label' => 'Video',\n      'name' => 'video',\n      'type' => 'oembed',\n      'instructions' => '',\n      'required' => 0,\n      'conditional_logic' => 0,\n      'wrapper' => array(\n          'width' => '',\n          'class' => '',\n          'id' => '',\n      ),\n      'width' => '',\n      'height' => '',\n  ),"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Select</h3>"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "array(\n    'key' => 'field_select',\n    'label' => 'Select',\n    'name' => 'shortcode_select',\n    'type' => 'select',\n    'instructions' => '',\n    'required' => 0,\n    'conditional_logic' => 0,\n    'wrapper' => array(\n        'width' => '',\n        'class' => '',\n        'id' => '',\n    ),\n    'choices' => array(\n        'option_1' => 'Option 1',\n        'option_2' => 'Option 2',\n        'option_3' => 'Option 3',\n\n    ),\n    'default_value' => array(),\n    'allow_null' => 0,\n    'multiple' => 0,\n    'ui' => 1,\n    'ajax' => 0,\n    'return_format' => 'value',\n    'placeholder' => '',\n),"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "'conditional_logic' => array(\n    array(\n        array(\n            'field' => 'field_select',\n            'operator' => '==',\n            'value' => 'option_1',\n        ),\n    ),\n),"
+    },
+    {
+      "type": "text",
+      "data": "Date Time"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "array (\n\t\t\t'key' => 'field_581cb31febc7f',\n\t\t\t'label' => 'date',\n\t\t\t'name' => 'date',\n\t\t\t'type' => 'date_picker',\n\t\t\t'instructions' => '',\n\t\t\t'required' => 0,\n\t\t\t'conditional_logic' => 0,\n\t\t\t'wrapper' => array (\n\t\t\t\t'width' => '',\n\t\t\t\t'class' => '',\n\t\t\t\t'id' => '',\n\t\t\t),\n\t\t\t'display_format' => 'F j, Y',\n\t\t\t'return_format' => 'F j, Y',\n\t\t\t'first_day' => 1,\n\t\t),"
+    },
+    {
+      "type": "text",
+      "data": "Radio"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "array (\n\t\t\t'key' => 'field_58220980f0757',\n\t\t\t'label' => 'radio',\n\t\t\t'name' => 'radio',\n\t\t\t'type' => 'radio',\n\t\t\t'instructions' => '',\n\t\t\t'required' => 0,\n\t\t\t'conditional_logic' => 0,\n\t\t\t'wrapper' => array (\n\t\t\t\t'width' => '',\n\t\t\t\t'class' => '',\n\t\t\t\t'id' => '',\n\t\t\t),\n\t\t\t'choices' => array (\n\t\t\t\t'dormant' => 'dormant',\n\t\t\t\t'build-up' => 'build-up',\n\t\t\t\t'live' => 'live',\n\t\t\t),\n\t\t\t'allow_null' => 0,\n\t\t\t'other_choice' => 0,\n\t\t\t'save_other_choice' => 0,\n\t\t\t'default_value' => '',\n\t\t\t'layout' => 'vertical',\n\t\t),"
+    },
+    {
+      "type": "text",
+      "data": "File download"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "array (\n\t\t\t'key' => 'field_58235399cd6d4',\n\t\t\t'label' => 'file download',\n\t\t\t'name' => 'file_download',\n\t\t\t'type' => 'file',\n\t\t\t'instructions' => '',\n\t\t\t'required' => 0,\n\t\t\t'conditional_logic' => 0,\n\t\t\t'wrapper' => array (\n\t\t\t\t'width' => '',\n\t\t\t\t'class' => '',\n\t\t\t\t'id' => '',\n\t\t\t),\n\t\t\t'return_format' => 'array',\n\t\t\t'library' => 'all',\n\t\t\t'min_size' => '',\n\t\t\t'max_size' => '',\n\t\t\t'mime_types' => '',\n\t\t),"
+    },
+    {
+      "type": "text",
+      "data": "File Download Usage"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": "<?php $fileUrl = $mainRow['fil_download'];  ?>\n\t\t                           \t\t<a href=\"<?php echo $fileUrl['url']; ?>\" target=\"_blank\">DOWNLOAD</a>"
+    },
+    {
+      "type": "text",
+      "data": "Toggle"
+    },
+    {
+      "type": "code",
+      "language": "php",
+      "data": " array (\n    'key' => 'field_admin_exhibitor_links',\n    'label' => __('Exhibitor Detail Links'),\n    'name' => 'exhibitor_link',\n    'type' => 'true_false',\n    'default_value' => 1,\n    'message' => '',\n    'ui' => 1,\n    'ui_on_text' => 'On',\n    'ui_off_text' => 'Off',\n    'instructions' => __('This field can be used to control access to exhibitor detail pages'),\n    'required' => 0,\n    'wrapper' => array (\n        'width' => '',\n        'class' => '',\n        'id' => '',\n    ),\n),"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Flex Box",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Basics - Parent"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "display: flex;\nflex-direction: row;\njustify-content: flex-start;\nalign-content: stretch;\nalign-items: flex-start;\nflex-wrap: wrap;"
+    },
+    {
+      "type": "text",
+      "data": "Basics - Child"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "order: 0;\nflex: 1 1 30%;\nalign-self: auto;"
+    },
+    {
+      "type": "text",
+      "data": "Centering content - Parent"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "display: flex;\nalign-items: center;\njustify-content: center;"
+    },
+    {
+      "type": "text",
+      "data": "Center content - Child"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "max-width: 90%;"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Examples</h3><div><a href=\"https://codepen.io/paulobrien/pen/xVNMRZ\">https://codepen.io/paulobrien/pen/xVNMRZ</a><br></div>"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "title": "06: Class Bindings",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<div>A common need for data binding is manipulating an element’s class list \nand its inline styles. Since they are both attributes, we can use <code>v-bind</code>\n to handle them: we only need to calculate a final string with our \nexpressions. However, meddling with string concatenation is annoying and\n error-prone. For this reason, Vue provides special enhancements when <code>v-bind</code> is used with <code>class</code> and <code>style</code>. In addition to strings, the expressions can also evaluate to objects or arrays.</div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3><hr></h3><h3>Binding HTML Classes:</h3><h3>Object Syntax<br></h3>"
+    },
+    {
+      "type": "text",
+      "data": "We can pass an object to <code>v-bind:class</code> to dynamically toggle classes:"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div v-bind:class=\"{ active: isActive }\"></div>"
+    },
+    {
+      "type": "text",
+      "data": "<p>The above syntax means the presence of the <code>active</code> class will be determined by the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/Truthy\" target=\"_blank\" rel=\"noopener\">truthiness</a> of the data property <code>isActive</code>.</p>\n<p>You can have multiple classes toggled by having more fields in the object. In addition, the <code>v-bind:class</code> directive can also co-exist with the plain <code>class</code> attribute. So given the following template:</p>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div\n  class=\"static\"\n  v-bind:class=\"{ active: isActive, 'text-danger': hasError }\"\n></div>"
+    },
+    {
+      "type": "text",
+      "data": "<p>When <code>isActive</code> or <code>hasError</code> changes, the class list will be updated accordingly. For example, if <code>hasError</code> becomes <code>true</code>, the class list will become <code>\"static active text-danger\"</code>.</p>\n<p>The bound object doesn’t have to be inline:</p>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div v-bind:class=\"classObject\"></div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "data: {\n  classObject: {\n    active: true,\n    'text-danger': false\n  }\n}"
+    },
+    {
+      "type": "text",
+      "data": "<h3 id=\"Array-Syntax\"><hr></h3><h3>Array Syntax<br></h3><div>We can pass an array to&nbsp;<code style=\"font-size: 11.699999809265137px; background-color: rgba(255, 255, 255, 0.0980392);\">v-bind:class</code>&nbsp;to apply a list of classes:<br></div>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div v-bind:class=\"[activeClass, errorClass]\"></div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "data: {\n  activeClass: 'active',\n  errorClass: 'text-danger'\n}"
+    },
+    {
+      "type": "text",
+      "data": "<p>Which will render:</p>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "<div class=\"active text-danger\"></div>"
+    },
+    {
+      "type": "text",
+      "data": "<p>If you would like to also toggle a class in the list conditionally, you can do it with a ternary expression:</p>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div v-bind:class=\"[isActive ? activeClass : '', errorClass]\"></div>"
+    },
+    {
+      "type": "text",
+      "data": "<p>This will always apply <code>errorClass</code>, but will only apply <code>activeClass</code> when <code>isActive</code> is truthy.</p>\n<p>However, this can be a bit verbose if you have multiple conditional \nclasses. That’s why it’s also possible to use the object syntax inside \narray syntax:</p>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div v-bind:class=\"[{ active: isActive }, errorClass]\"></div>"
+    },
+    {
+      "type": "text",
+      "data": "<hr>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Adding a class</h3>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"app\">\n    <div\n            class=\"demo\"\n            @click=\"attachRed = !attachRed\"\n            :class=\"{red: attachRed}\"\n    ></div>\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "css",
+      "data": ".demo{\n    background-color: grey;\n    width:100px;\n    height:100px;\n    margin: 20px;\n    display: inline-block;\n}\n.red{\n    background-color: red;\n}\n.green{\n    background-color: green;\n}\n.blue{\n    background-color: blue;\n}"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var app = new Vue({\n    el: \"#app\",\n    data: {\n        attachRed: false\n    },\n})"
+    },
+    {
+      "type": "text",
+      "data": "Improved class toggle"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"app\">\n    <div\n            class=\"demo\"\n            @click=\"attachRed = !attachRed\"\n            :class=\"divClasses\"\n    ></div>\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var app = new Vue({\n    el: \"#app\",\n    data: {\n        attachRed: false\n    },\n    computed: {\n        divClasses: function(){\n            return{\n                red: this.attachRed,\n                blue: !this.attachRed\n            }\n        }\n    }\n})"
+    },
+    {
+      "type": "text",
+      "data": "Array of classes"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<div id=\"app\">\n    <div\n            class=\"demo\"\n            @click=\"attachRed = !attachRed\"\n            :class=\"divClasses\"\n    ></div>\n    <div class=\"demo\" :class=\"{red: attachRed}\"></div>\n    <div class=\"demo\" :class=\"[color,{red: attachRed}]\"></div>\n    <hr>\n    <input type=\"text\" v-model=\"color\">\n</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var app = new Vue({\n    el: \"#app\",\n    data: {\n        attachRed: false,\n        color: 'green'\n    },\n    computed: {\n        divClasses: function(){\n            return{\n                red: this.attachRed,\n                blue: !this.attachRed\n            }\n        }\n    }\n})"
+    }
+  ]
+}

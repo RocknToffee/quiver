@@ -1,0 +1,116 @@
+{
+  "title": "Decorators",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>@Output</h3>"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "//app-component.ts\nexport class AppComponent {\n\n    loadedFeature = 'recipe';\n\n    onNavigate(feature: string) {\n        this.loadedFeature = feature;\n    }\n}\n"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<!--app-component.html-->\n<app-header (featureSelected)=\"onNavigate($event)\" ></app-header>\n<app-recipes *ngIf=\"loadedFeature === 'recipe'\"></app-recipes>\n<app-shopping-list *ngIf=\"loadedFeature !== 'recipe'\"></app-shopping-list>\n"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "//header-component.ts\nexport class HeaderComponent {\n\n    @Output() featureSelected = new EventEmitter<string>();\n\n    onSelect(feature: string) {\n        this.featureSelected.emit(feature);\n    }\n\n}"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<!--header-component.html-->\n<a class=\"nav-link\" (click)=\"onSelect('recipe')\" href=\"#\">Recipes</a>\n<a class=\"nav-link\" (click)=\"onSelect('shopping-list')\" href=\"#\">Shopping List</a>\n"
+    },
+    {
+      "type": "text",
+      "data": "<h3>@Input()</h3>"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "export class ElementComponent implements OnInit,\n\n    @Input() name: string;\n}"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "  <div class=\"panel-heading\">{{ name }}</div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>@ViewChild()</h3>"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "export class ElementComponent implements OnInit,\n    \n    @ViewChild('heading') header: ElementRef;\n     ngOnInit() {\n        console.log('Text Content OnIit: ' + this.header.nativeElement.textContent)\n    }\n    ngAfterViewInit() {\n        console.log('Text Content AfterViewInit: ' + this.header.nativeElement.textContent)\n    }\n}"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": " <div class=\"panel-heading\" #heading >Heading One</div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3><span style=\"background-color:#344134;\">@ContentChild</span></h3>"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "export class ElementComponent implements OnInit,\n    \n    @ContentChild('contentParagraph') paragraph:ElementRef;\n    \n    ngOnInit() {\n        console.log('ngOnInit Called');\n        console.log('Text Content of Paragraph' + this.paragraph.nativeElement.textContent);\n    }\n        ngAfterViewInit() {\n        console.log('ngAfterViewInit Called');\n        console.log('Text Content of Paragraph' + this.paragraph.nativeElement.textContent);\n\n    } // Called after the component's view (and child views) have been checked\n}"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<p #contentParagraph>Paragraph</p>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>@HostListener</h3>"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "@Directive({\n    selector: '[appBetterHighlight]'\n})\nexport class BetterHighlightDirective implements OnInit {\n\n    constructor(private elRef: ElementRef, private renderer: Renderer2) {}\n    @HostListener('mouseenter') mouseover(eventdata: Event){\n        this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');\n    }\n    @HostListener('mouseleave') mouseleave(eventdata: Event){\n        this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'transparent');\n    }\n\n}"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<p appBetterHighlight> style me with basic</p>  "
+    },
+    {
+      "type": "text",
+      "data": "<h3>@HostBinding</h3>"
+    },
+    {
+      "type": "text",
+      "data": "Example One"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "@Directive({\n    selector: '[appBetterHighlight]'\n})\nexport class BetterHighlightDirective implements OnInit {\n\n    @HostBinding('style.backgroundColor') backgroundColour: string = 'transparent';\n\n    constructor(private elRef: ElementRef, private renderer: Renderer2) {\n    }\n\n    @HostListener('mouseenter') mouseover(eventdata: Event){\n        this.backgroundColour = 'blue'\n    }\n    @HostListener('mouseleave') mouseleave(eventdata: Event){\n        this.backgroundColour = 'transparent'\n    }\n\n}"
+    },
+    {
+      "type": "text",
+      "data": "Example Two"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "@Directive({\n    selector: '[appBetterHighlight]'\n})\nexport class BetterHighlightDirective implements OnInit {\n\n    @Input() defaultColor: string = 'transparent';\n    @Input() highlightColor: string = 'blue';\n\n    @HostBinding('style.backgroundColor') backgroundColor: string;\n\n    constructor(private elRef: ElementRef, private renderer: Renderer2) {\n    }\n\n    ngOnInit() {\n        this.backgroundColor = this.defaultColor\n        // this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');\n    }\n    @HostListener('mouseenter') mouseover(eventdata: Event){\n        this.backgroundColor = this.highlightColor\n    }\n    @HostListener('mouseleave') mouseleave(eventdata: Event){\n        this.backgroundColor = this.defaultColor\n    }\n\n}"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<p appBetterHighlight [defaultColor]=\"'yellow'\" [highlightColor]=\"'red'\"> style me with better</p>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

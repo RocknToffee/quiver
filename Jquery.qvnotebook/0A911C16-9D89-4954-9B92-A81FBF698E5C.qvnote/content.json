@@ -1,0 +1,33 @@
+{
+  "title": "Filtering",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Simple single sort based on data atribute"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<section>\n    <div class=\"inner_wrapper\">\n      <button class=\"sort-button\" value=\"category\"></button>\n    </div>\n</section>\n<section class=\"sort-list\">\n    <div class=\"inner_wrapper\">\n      <article class=\"sort-item\" data-category=\"category\"></article>\n    </div>\n</section>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('.sort-button').on('click',function () {\n    var filter = $(this).val();\n    console.log(filter);\n    filterList(filter);\n});\n\n// filter function\nfunction filterList(value) {\n    var list = $(\".sort-list .sort-item\");\n    $(list).fadeOut(\"fast\");\n    if (value == \"All\") {\n        $(\".sort-list\").find(\"article\").each(function (i) {\n            $(this).delay(200).fadeIn(\"fast\");\n        });\n    } else {\n        //Notice this *=\" <- This means that if the data-category contains multiple options, it will find them\n        //Ex: data-category=\"Cat1, Cat2\"\n        $(\".sort-list\").find(\"article[data-category*=\" + value + \"]\").each(function (i) {\n            $(this).delay(200).fadeIn(\"fast\");\n        });\n    }\n}"
+    },
+    {
+      "type": "text",
+      "data": "Multi select sort using check boxes"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<section>\n    <div class=\"inner_wrapper filters_cat\">\n        <div class=\"block\">\n            <input type=\"checkbox\" value=\"Category Name\">\n            <label>Category Name</label>\n        </div>\n    </div>\n</section>\n<section>\n    <div class=\"inner_wrapper\">\n      <article data-category=\"category\">\n        \n      </article>\n    </div>\n</section>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(\".filters_cat :checkbox\").click(function() {\n    var re = new RegExp($(\".filters_cat :checkbox:checked\").map(function() {\n        return this.value;\n    }).get().join(\"|\") );\n    console.log(filter);\n    $(\"article\").each(function() {\n        var $this = $(this);\n        $this[re.source!=\"\" && re.test($this.attr(\"data-category\")) ? \"show\" : \"hide\"]();\n    });\n});"
+    }
+  ]
+}

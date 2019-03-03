@@ -1,0 +1,14 @@
+{
+  "title": "Preload Images",
+  "cells": [
+    {
+      "type": "text",
+      "data": "A nice little script to load images in the background that you may call on later in a carousel or roll over state."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$.preloadImages = function() {\n  for (var i = 0; i < arguments.length; i++) {\n    $(\"<img />\").attr(\"src\", arguments[i]);\n    console.log(\"i just loaded woo!\");\n  }\n}\n\n$.preloadImages( 'image1.png', 'image2.png');\n"
+    }
+  ]
+}

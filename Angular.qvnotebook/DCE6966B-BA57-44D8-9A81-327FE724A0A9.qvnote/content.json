@@ -1,0 +1,57 @@
+{
+  "title": "General",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Home Page:&nbsp;<a href=\"https://angular.io/\">https://angular.io/</a><div>Docs:&nbsp;<a href=\"https://angular.io/docs/ts/latest/quickstart.html\">https://angular.io/docs/ts/latest/quickstart.html</a></div><div>QuickStart:&nbsp;<a href=\"https://github.com/angular/quickstart\">https://github.com/angular/quickstart</a></div><div>Angular CLI:&nbsp;<a href=\"https://cli.angular.io/\">https://cli.angular.io/</a></div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Useful Commands</h3><div><b>Back Tick:</b> &nbsp;<span style=\"font-size: 13px;\">` &nbsp;</span></div><div><span style=\"font-size: 13px;\"><br></span></div><div><div><b>Generating and serving an Angular project via a development server</b></div></div>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "ng new PROJECT_NAME\ncd PROJECT_NAME\nng serve\n// http://localhost:4200/."
+    },
+    {
+      "type": "text",
+      "data": "<div><b>Generating Components, Directives, Pipes and Services</b></div>"
+    },
+    {
+      "type": "code",
+      "language": "scss",
+      "data": "ng generate component my-new-component\nng g component my-new-component // using the alias\n\n// components support relative path generation\n// if in the directory src/app/feature/ and you run\nng g component new-cmp\n// your component will be generated in src/app/feature/new-cmp\n// but if you were to run\nng g component ../newer-cmp\n// your component will be generated in src/app/newer-cmp"
+    },
+    {
+      "type": "text",
+      "data": "<table style=\"box-sizing: border-box; display: block; width: 888px; overflow: auto; color: rgb(36, 41, 46); font-family: -apple-system, system-ui, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; font-size: 16px; font-variant-ligatures: normal; orphans: 2; widows: 2;\"><thead style=\"box-sizing: border-box;\"><tr style=\"box-sizing: border-box; background-color: rgb(255, 255, 255); border-top-color: rgb(198, 203, 209);\"><th style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\">Scaffold</th><th style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\">Usage</th></tr></thead><tbody style=\"box-sizing: border-box;\"><tr style=\"box-sizing: border-box; background-color: rgb(255, 255, 255); border-top-color: rgb(198, 203, 209);\"><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><a href=\"https://github.com/angular/angular-cli/wiki/generate-component\" style=\"box-sizing: border-box; color: rgb(3, 102, 214); text-decoration: none;\">Component</a></td><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><code style=\"box-sizing: border-box; font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.0470588);\">ng g component my-new-component</code></td></tr><tr style=\"box-sizing: border-box; background-color: rgb(246, 248, 250); border-top-color: rgb(198, 203, 209);\"><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><a href=\"https://github.com/angular/angular-cli/wiki/generate-directive\" style=\"box-sizing: border-box; color: rgb(3, 102, 214); text-decoration: none;\">Directive</a></td><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><code style=\"box-sizing: border-box; font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.0470588);\">ng g directive my-new-directive</code></td></tr><tr style=\"box-sizing: border-box; background-color: rgb(255, 255, 255); border-top-color: rgb(198, 203, 209);\"><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><a href=\"https://github.com/angular/angular-cli/wiki/generate-pipe\" style=\"box-sizing: border-box; color: rgb(3, 102, 214); text-decoration: none;\">Pipe</a></td><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><code style=\"box-sizing: border-box; font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.0470588);\">ng g pipe my-new-p</code></td></tr><tr style=\"box-sizing: border-box; background-color: rgb(246, 248, 250); border-top-color: rgb(198, 203, 209);\"><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><a href=\"https://github.com/angular/angular-cli/wiki/generate-service\" style=\"box-sizing: border-box; color: rgb(3, 102, 214); text-decoration: none;\">Service</a></td><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><code style=\"box-sizing: border-box; font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.0470588);\">ng g service my-new-service</code></td></tr><tr style=\"box-sizing: border-box; background-color: rgb(255, 255, 255); border-top-color: rgb(198, 203, 209);\"><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><a href=\"https://github.com/angular/angular-cli/wiki/generate-class\" style=\"box-sizing: border-box; color: rgb(3, 102, 214); text-decoration: none;\">Class</a></td><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><code style=\"box-sizing: border-box; font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.0470588);\">ng g class my-new-class</code></td></tr><tr style=\"box-sizing: border-box; background-color: rgb(246, 248, 250); border-top-color: rgb(198, 203, 209);\"><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><a href=\"https://github.com/angular/angular-cli/wiki/generate-guard\" style=\"box-sizing: border-box; color: rgb(3, 102, 214); text-decoration: none;\">Guard</a></td><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><code style=\"box-sizing: border-box; font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.0470588);\">ng g guard my-new-guard</code></td></tr><tr style=\"box-sizing: border-box; background-color: rgb(255, 255, 255); border-top-color: rgb(198, 203, 209);\"><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><a href=\"https://github.com/angular/angular-cli/wiki/generate-interface\" style=\"box-sizing: border-box; color: rgb(3, 102, 214); text-decoration: none;\">Interface</a></td><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><code style=\"box-sizing: border-box; font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.0470588);\">ng g interface my-new-interface</code></td></tr><tr style=\"box-sizing: border-box; background-color: rgb(246, 248, 250); border-top-color: rgb(198, 203, 209);\"><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><a href=\"https://github.com/angular/angular-cli/wiki/generate-enum\" style=\"box-sizing: border-box; color: rgb(3, 102, 214); text-decoration: none;\">Enum</a></td><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><code style=\"box-sizing: border-box; font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.0470588);\">ng g enum my-new-enum</code></td></tr><tr style=\"box-sizing: border-box; background-color: rgb(255, 255, 255); border-top-color: rgb(198, 203, 209);\"><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><a href=\"https://github.com/angular/angular-cli/wiki/generate-module\" style=\"box-sizing: border-box; color: rgb(3, 102, 214); text-decoration: none;\">Module</a></td><td style=\"box-sizing: border-box; border-color: rgb(223, 226, 229);\"><code style=\"box-sizing: border-box; font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace; font-size: 13.6px; background-color: rgba(27, 31, 35, 0.0470588);\">ng g module my-module</code></td></tr></tbody></table>"
+    },
+    {
+      "type": "text",
+      "data": "<pre style=\"background-color: rgb(43, 43, 43);\">npm install --save-dev bootstrap</pre><pre style=\"background-color: rgb(43, 43, 43);\"><span style=\"color: rgb(106, 135, 89); font-family: Menlo; font-size: 9pt;\">\"../node_modules/bootstrap/dist/css/bootstrap.min.css</span><font face=\"Menlo\" size=\"2\">”</font><span style=\"color: rgb(204, 120, 50); font-family: Menlo; font-size: 9pt;\">,<br></span></pre><pre style=\"background-color:#2b2b2b;color:#a9b7c6;font-family:'Menlo';font-size:9.0pt;\"><span style=\"color:#cc7832;\"><br></span></pre>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>LifeCycle</h3><div>Life cycle hooks into the phases of component initialisation</div>"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "ngOnChanges(){} // Called after a bound input property changes --> e.g @Input\nngOnInit(){} // Called onced the component is initialised --> e.g after the constructor\nngDoCheck(){} // Called during every change detection run --> e.g property changes / every check angluar makes\nngAfterContentInit // Called after content (ng-content) has been projected into view\nngAfterContentChecked // Called every time the projected content has been checked\nngAfterViewInit // Called after the component's view (and child views) have been checked\nngAfterViewChecked // Called every time the view (and child views) have been checked\nngOnDestroy // Called once the compoent is about to be destoryed"
+    },
+    {
+      "type": "text",
+      "data": "<h3>EventEmitter</h3>"
+    },
+    {
+      "type": "code",
+      "language": "typescript",
+      "data": "@Output() recipeSelected = new EventEmitter<void>();\nonSelected() {\n    this.recipeSelected.emit();\n}"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

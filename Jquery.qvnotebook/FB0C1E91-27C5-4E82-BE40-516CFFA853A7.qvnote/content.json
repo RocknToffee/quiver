@@ -1,0 +1,362 @@
+{
+  "title": "Selectors (Finding Elements)",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>Using Jquery , you can usually select elements ussing CSS-style selectors.<br>It also offers some extra selectors,noted below with a ‘JQ'</h3>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Basic Selectors</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(*)  /* All Elements "
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('element') /* All elements with that element name"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('#id') /* Elements whose id attribute has the value specified"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('.class') /* Elements whose class attribute has the value specified"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('selector1','selector2') /* Elements that match more than one selector (seealso the .add() method, which is more efficient when combing selectors"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Hierarchy</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('ancestor descendant') /* An element that is a decendant of another element (e.g, li a)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('parent' > 'child') /* An element that is a direct child of another element (you can use * in the place of the child to select all child elements of the specified parent)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('previous' + 'next') /* Adjecent sibling selector only selects elements that are immediatly followed by the previous element"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('previous' - 'siblings') /* Siblings selectors will select any elements that are a sibling of the previous element"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Basic Filters</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:not('#summary')') /* All elements excerpt the one in the delector (e.g, div:not('#summary'))"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:first') /* JQ The first element from the selecton"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:last') /* JQ The last element from the selecton"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:even') /* JQ Elements with an even index number in the selection"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:odd') /* JQ Elements with an odd index number in the selection"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:eq(1)') /* JQ Elements with index number equal to the one in the perameter"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:gt(1)') /* JQ Elements with index number greater than the perameter"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:lt(1)') /* JQ Elements with index number less than than the perameter"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:header') /* JQ All <h1> - <h6> elements"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:animated') /* JQ All <h1> - <h6> elements"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:focus') /* The element which currently has focus"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Content Filters</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:contains('text')') /* Elements that contain the specified text as a parameter"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:empty') /* All elements that have no children"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:parent') /* JQ All elements that have a child node (can be text or element)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:has(selector)') /* JQ Elements that contain at least one element that matches the selector (e.g, div:has(p) matches all dive elements that contain a <p> element))"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Visibility Filters</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:hidden') /* All elements that are hidden"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:visible') /* All elements that are consume space in th elayout of the page not selected if: display: none; height / width: 0 ancestor is hidden. Selected if: visability: hidden; opacity: 0 because they would take up space in layout"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Child Filters</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:nth-child(1)') /* The value is not zero based e.g ul li:nth-child(2)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:first-child') /* First child from the current selection"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:last-child') /* Last child from the current selection"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div:only-child') /* When there is only one child of the element (div p:only-child))"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Attributes Filters</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div[attribute]') /* Elements that carry the specified attribute (with any value)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div[attribute = value]')  /* Elements that carry the specified attribute with the specified value"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div[attribute != value]')  /* Elements that carry the specified attribute but not the specified value"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div[attribute ^= value]')  /* The value of the attribute begins with this value"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div[attribute $= value]')  /* The value of the attribute ends with this value"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div[attribute *= value]')  /* The value should appear somwhere in the attribute value"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div[attribute |= value]')  /* Equal to given string, or starting with string and followed by a hypen"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div[attribute -= value]')  /* The value should be one of the values in a space seperated list"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('div[attribute1][attribute2]')  /* Elements that matchall of the selectors"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Form</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(':input')  /* JQ All input elements"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(':text')  /* JQ All text inputs "
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(':password')  /* JQ All password inputs "
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(':radio')  /* JQ All radio buttons"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(':checkbox')  /* JQ All checkboxes"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(':submit')  /* JQ All submit buttons"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(':image')  /* JQ All <img> elements"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(':reset')  /* JQ All reset buttons"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(':button')  /* JQ All <button> elements"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(':file')  /* JQ All file inputs"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(':selected')  /* JQ All selected items from drop down lists"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(':enabled')  /* JQ All enabled form elements (the default for all form elements)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(':disabled')  /* JQ All disabled form elements (using the CSS disabled property)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(':checked')  /* JQ All checked radio buttons or checkboxes"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Traversing the dom</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".find() /* all elements within the current selection that match the selector."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".closest() /* Nearest ancestor (not just parent ) that matches selector."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".parent() /* Direct parent of current selection."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".parents() /* All parents of current selection."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".children() /* All children of current selection."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".siblings() /* All siblings of current selection."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".next() /* Next sibling of current element,"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".nextAll() /* All sub"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}

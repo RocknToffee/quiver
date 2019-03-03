@@ -1,0 +1,14 @@
+{
+  "title": "Twig - ACF - DATA ",
+  "cells": [
+    {
+      "type": "text",
+      "data": "Single Relationship Twig file using ACF refered to through the context"
+    },
+    {
+      "type": "code",
+      "language": "twig",
+      "data": "{% if data.relate_all_thirty|length > 0 %}\n    <section id=\"thirty_relationship\">\n        <div class=\"inner_wrapper gcontainer\">\n              {% set relate_all = TimberPost(data.relate_all_thirty) %}\n              {% for relation in relate_all %}\n                  <div class=\"block thirty\">\n                      <a href=\"{{ relation.link }}\">\n                          <img src=\"{{ TimberImage(relation.thumbnail).src('thirty_twenty_block') }}\">\n                      </a>\n                      <h3>{{ relation.title }}</h3>\n                      <p>{{ relation.post_excerpt }}</p>\n                  </div>\n              {% endfor %}\n        </div>\n    </section>\n{% endif %}"
+    }
+  ]
+}

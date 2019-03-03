@@ -1,0 +1,331 @@
+{
+  "title": "Methods (Doing Things)",
+  "cells": [
+    {
+      "type": "text",
+      "data": "<h3>Content Filters</h3><div>Get or change content of elements, attributes, text nodes</div>"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Get / Change Content</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".html() /* This method gives every element in the matched set the same new content. The new content may include HTML"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".text() /* This method gives every element in the matched set the same new text content. Any Markup would be shown as text"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".remove() /* This method removes all of the elements in the matched set"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".replaceWith() /* This method replaces every element in a matched set with new content. It also returns the replaced elements"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$( \"div\" )\n  .html( \"<p>New content</p>\" ); /* Set HTML"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$( \"div.demo-container\" ).html(); /* Get HTML"
+    },
+    {
+      "type": "text",
+      "data": "<span style=\"color: rgb(51, 51, 51); font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);\">Find the text in the first paragraph (stripping out the html), then set the html of the last paragraph to show it is just text.</span><div><span style=\"color: rgb(51, 51, 51); font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-size: 14px; font-variant-ligatures: normal; orphans: 2; widows: 2; background-color: rgb(255, 255, 255);\">JS-Fiddle:&nbsp;</span><a href=\"https://jsfiddle.net/george_hawthorne/0jgojuwb/1/\">https://jsfiddle.net/george_hawthorne/0jgojuwb/1/</a></div>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<p><b>Test</b> Paragraph.</p>\n<p></p>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var str = $( \"p:first\" ).text();\n$( \"p:last\" ).html( str );"
+    },
+    {
+      "type": "text",
+      "data": "JS-Fiddle&nbsp;<a href=\"https://jsfiddle.net/george_hawthorne/h24hhz02/\">https://jsfiddle.net/george_hawthorne/h24hhz02/</a>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<ul>\n  <li class=\"hot\">I wanrt to be italic</li>\n</ul>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('li.hot').html(function() {\n\treturn '<em>' + $(this).text() + '</em>';\n});"
+    },
+    {
+      "type": "text",
+      "data": "JS-Fiddle&nbsp;<a href=\"https://jsfiddle.net/george_hawthorne/zLnnf45j/\">https://jsfiddle.net/george_hawthorne/zLnnf45j/</a>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<ul>\n  <li>pine</li>\n  <li class=\"hot\">honey</li>\n  <li id=\"one\">balsamic Vinegar</li>\n</ul>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('li:contains(\"pine\")').text('almonds');\n$('li.hot').html(function(){\n\treturn '<em>' + $(this).text() + '</em>';\n\t});\n  $('li#one').remove();"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Elements</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".before() /* This method inserts content before the selected element(s)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".after() /* This method inserts content after the selected element(s)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".prepend()  /* This method inserts content inside the selected element(s), after the opening tag"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".append()  /* This method inserts content inside the selected element(s), before the closing tag"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".clone() /* Creates a copy of the matched set (including any decendants and text nodes)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".unwrap() /* Removes parents of matched set, leaving matched elements"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".detach() /* Same as .remove() but keeps a copy in the memory"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".empty() /* Removes childe nodes and decendants from any elements in matched set"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".add() /* Selects all elements that contain the text specified (parameter is case sensitive)"
+    },
+    {
+      "type": "text",
+      "data": "JS-Fiddle&nbsp;<a href=\"https://jsfiddle.net/george_hawthorne/w1skd525/\">https://jsfiddle.net/george_hawthorne/w1skd525/</a>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<ul>\n  <li>pine</li>\n  <li class=\"hot\">honey</li>\n  <li id=\"one\">balsamic Vinegar</li>\n</ul>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('ul').before('<p class=\"notice\">Just updated</p>');\n$('li.hot').prepend('+ ');\nvar $newListItem = $('<li><em>gluten-free</em> soy sauce</li>');\n$('li:last').after($newListItem);"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Attributes</h3>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".attr() /* This method can get or set a specified attribute and its value. To get the value of an attribute, you pecifty the name of the attribute in the parentheses */"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".removeAttr() /* This method removes a specified attribute (and its value). You just specify the name of the attribute you want to remove from the element in the parentheses */"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".addClass() /* This method adds a new value to the existing value of the class attribute. It doe snot overwirt existing values."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".removeClass() /* This method removes a value from the class attribute, leaving any other class names within that attribute intact"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".css() /*"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('li#one').attr('id'); /* Get attribute */"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('li#one').attr('id','hot'); /* Set Attribute */"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('li#one').removeAttr('id'); /* Remove id attribute"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "var backgroundColor = $('li').css('background-color'); /* Get the background color of element"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('li').css('background-color', #272727); /* Get the background color of element"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('li').css('padding-left', +-20); /* increase value of attribute"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('li').css({\n  'background-color' : '#272727',\n  'font-family' : 'Courier'\n});"
+    },
+    {
+      "type": "text",
+      "data": "JS-Fiddle&nbsp;<a href=\"https://jsfiddle.net/george_hawthorne/wfr1m8kr/1/\">https://jsfiddle.net/george_hawthorne/wfr1m8kr/1/</a>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<ul id=\"unordered\">\n  <li id=\"one\">pine</li>\n  <li id=\"two\" class=\"hot\">honey</li>\n  <li id=\"three\" class=\"hot\">balsamic Vinegar</li>\n</ul>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$('li#three').removeClass('hot');\n$('li.hot').addClass('favorite');\n$('ul').attr('id','group');"
+    },
+    {
+      "type": "text",
+      "data": "<h3>Form Values</h3><div>Methods</div>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".val() /* Primarily used with <input>,<select> and <textarea> elements. It can be used to get the value of the first ekement in a matched set, or update the value of all of them"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".isNumeric() /* Check whether the value represents a numeric value and returns a Boolean."
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".filter() /* Used to filter a jQuery selection using a second selector (especially form-specific filters)"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".is() /* Often used with filters to check whether a form input is selected/checked"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": ".on() /* Used to handle all events"
+    },
+    {
+      "type": "text",
+      "data": "Events"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "blur /* when an element looses focus"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "change /* When the value of an input changes"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "focus /* When the vlaue of an input changes "
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "select /* When the option for a <select> element is changed"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "submit /* When a for is submitted"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$( \".selector\" ).on( \"click\", function() {\n  console.log( $( this ).text() );\n});"
+    },
+    {
+      "type": "text",
+      "data": "<a href=\"https://jsfiddle.net/george_hawthorne/rgLp5p4L/\">https://jsfiddle.net/george_hawthorne/rgLp5p4L/</a>"
+    },
+    {
+      "type": "code",
+      "language": "html",
+      "data": "<ul>\n  <li>Fresh Figgs</li>\n  <li>Pine Nuts</li>\n  <li>Honey</li>\n  <li>Balsamic Vinegar</li>\n</ul>\n<div id=\"newItemButton\"><button href=\"#\" id=\"showForm\">new item</button></div>\n<form id=\"newItemForm\">\n  <input type=\"text\" id=\"itemDescription\" placeholder=\"Add description...\">\n  <input type=\"submit\" id=\"addButton\" value=\"add\">\n</form>"
+    },
+    {
+      "type": "code",
+      "language": "javascript",
+      "data": "$(function(){\n  var $newItemButton = $('#newItemButton');\n  var $newItemForm = $('#newItemForm');\n  var $textInput = $('input:text');\n  \n  $newItemButton.show();\n  $newItemForm.hide();\n  \n  $('#showForm').on('click', function(){\n    $newItemButton.hide();\n    $newItemForm.show();\n  })\n  $newItemForm).on('submit', function(e){\n    e.preventDefault();\n    var newText = $('input:text').val();\n    $('li:last').after('<li>' + newText + '</li>');\n    $newItemForm.hide();\n    $newItemButton.show();\n    $textInput.val()\n  })\n})"
+    },
+    {
+      "type": "text",
+      "data": "<h3>General</h3>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": ""
+    },
+    {
+      "type": "text",
+      "data": "<br>"
+    },
+    {
+      "type": "text",
+      "data": ""
+    }
+  ]
+}
